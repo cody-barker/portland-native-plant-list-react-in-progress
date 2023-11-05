@@ -25,7 +25,8 @@ class SpeciesController < ApplicationController
         :max_height,
         :light,
         :moisture,
-        :photo
+        :photo,
+        :acknowledgement
       )
     end
 
