@@ -3,17 +3,17 @@ import { useState, useEffect, createContext } from 'react'
 const SpeciesContext = createContext()
 
 function SpeciesProvider({children}) {
-  const [species, setSpecies] = useState([])
+  const [allPlants, setAllPlants] = useState([])
   useEffect(() => {
     fetch("/species")
     .then((r) => r.json())
     .then((species) => {
-      setSpecies(species)
+      setAllPlants(species)
     })
   }, [])
 
   return(
-    <SpeciesContext.Provider value={{species, setSpecies}}>
+    <SpeciesContext.Provider value={{allPlants, setAllPlants}}>
       {children}
     </SpeciesContext.Provider>
   )
