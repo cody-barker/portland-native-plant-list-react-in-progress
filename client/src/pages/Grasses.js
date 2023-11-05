@@ -1,9 +1,12 @@
-import React from 'react'
+import {useContext} from 'react'
 import Plant from './Plant'
 import Search from '../components/Search'
+import { SearchContext } from '../SearchContext'
+import { SpeciesContext } from '../SpeciesContext'
 
-function Grasses({allPlants, compare, biSearch, comSearch, handleBiNameSearchState, handleComNameSearchState}) {
-
+function Grasses() {
+    const {biSearch, comSearch, handleBiNameSearchState, handleComNameSearchState, compare} = useContext(SearchContext)
+    const {allPlants} = useContext(SpeciesContext)
     const grasses = allPlants.filter(plant => plant.type.toLowerCase().includes("grass"))
     const grassesSorted = [...grasses].sort(compare)
     const grassComps = grassesSorted.map(plant => <Plant plant={plant} key={plant.id}/>)
