@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_11_05_183726) do
+ActiveRecord::Schema.define(version: 2023_11_05_190344) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2023_11_05_183726) do
   create_table "species", force: :cascade do |t|
     t.string "binomialName"
     t.string "commonName"
-    t.string "type"
+    t.string "speciesType"
     t.string "min_height"
     t.string "max_height"
     t.string "lightRequirement"
