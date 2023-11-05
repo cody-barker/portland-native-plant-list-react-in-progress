@@ -1,3 +1,3 @@
 class SpeciesSerializer < ActiveModel::Serializer
-  attributes :id, :binomial_name, :common_name, :type, :min_height, :max_height, :light, :moisture, :photo
+  attributes :id, :binomialName, :commonName, :speciesType, :min_height, :max_height, :lightRequirement, :moistureRequirement, :photo, :height
 end
