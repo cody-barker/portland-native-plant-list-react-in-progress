@@ -7,8 +7,7 @@ import { SpeciesContext } from '../SpeciesContext'
 function Trees() {
     const {biSearch, comSearch, handleBiNameSearchState, handleComNameSearchState, compare} = useContext(SearchContext)
     const {allPlants} = useContext(SpeciesContext)
-    
-    const trees = allPlants.filter(plant => plant.type.toLowerCase().includes("tree"))
+    const trees = allPlants.filter(plant => plant.speciesType.toLowerCase().includes("tree"))
     const treesSorted = [...trees].sort(compare)
     const treeComps = treesSorted.map(plant => <Plant plant={plant} key={plant.id}/>)
     const treeSearch = treesSorted.filter(plant => plant.binomialName.split(" ").join("").toLowerCase().includes(biSearch.split(" ").join("").toLowerCase()) && plant.commonName.split(" ").join("").toLowerCase().includes(comSearch.split(" ").join("").toLowerCase()))
