@@ -1,14 +1,14 @@
-import './App.css';
+import './styles/App.css';
 import React, {useState, useEffect} from 'react'
-import { Switch, Route } from "react-router-dom"
-import NavBar from './NavBar'
-import Home from './Home'
-import PlantForm from './PlantForm'
-import AllPlants from './AllPlants'
-import Trees from './Trees'
-import Shrubs from './Shrubs'
-import Grasses from './Grasses'
-import Herbs from './Herbs'
+import { Routes, Route } from "react-router-dom"
+import NavBar from './components/NavBar'
+import Home from './pages/Home'
+import PlantForm from './components/PlantForm'
+import AllPlants from './pages/AllPlants'
+import Trees from './pages/Trees'
+import Shrubs from './pages/Shrubs'
+import Grasses from './pages/Grasses'
+import Herbs from './pages/Herbs'
 
 function App() {
 
@@ -43,32 +43,15 @@ function App() {
   return (
     <div className="app">
       <NavBar />
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route path="/plantform">
-          <PlantForm allPlants={allPlants} setAllPlants={setAllPlants}/>
-        </Route>
-        <Route path="/allplants">
-          <AllPlants allPlants={allPlants} compare={compare} handleBiNameSearchState={handleBiNameSearchState} handleComNameSearchState={handleComNameSearchState} biSearch={biSearch} comSearch={comSearch}/>
-        </Route>
-        <Route path="/trees">
-          <Trees allPlants={allPlants} compare={compare} handleBiNameSearchState={handleBiNameSearchState} handleComNameSearchState={handleComNameSearchState} biSearch={biSearch} comSearch={comSearch}/>
-        </Route>
-        <Route path="/shrubs">
-          <Shrubs allPlants={allPlants} compare={compare} handleBiNameSearchState={handleBiNameSearchState} handleComNameSearchState={handleComNameSearchState} biSearch={biSearch} comSearch={comSearch}/>
-        </Route>
-        <Route path="/grasses">
-          <Grasses allPlants={allPlants} compare={compare} handleBiNameSearchState={handleBiNameSearchState} handleComNameSearchState={handleComNameSearchState} biSearch={biSearch} comSearch={comSearch}/>
-        </Route>
-        <Route path="/herbs">
-          <Herbs allPlants={allPlants} compare={compare} handleBiNameSearchState={handleBiNameSearchState} handleComNameSearchState={handleComNameSearchState} biSearch={biSearch} comSearch={comSearch}/>
-        </Route>
-        <Route path="*">
-          <h1>404 not found</h1>
-        </Route>
-      </Switch>
+      <Routes>
+        <Route path="/" element={<Home />}/>
+        <Route path="/allplants" element={<AllPlants />}/>
+        <Route path="/trees" element={<Trees />}/>
+        <Route path="/shrubs" element={<Shrubs />}/>
+        <Route path="/grasses" element={<Grasses />}/>
+        <Route path="/herbs" element={<Herbs />}/>
+        <Route path="*" element={<h1>404 not found</h1>}/>
+      </Routes>
     </div>
   )
 }

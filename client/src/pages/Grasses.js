@@ -1,6 +1,6 @@
 import React from 'react'
 import Plant from './Plant'
-import Search from './Search'
+import Search from '../components/Search'
 
 function Grasses({allPlants, compare, biSearch, comSearch, handleBiNameSearchState, handleComNameSearchState}) {
 

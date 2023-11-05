@@ -1,6 +1,6 @@
 import React from 'react'
 import Plant from './Plant'
-import Search from './Search'
+import Search from '../components/Search'
 
 function Trees({allPlants, compare, biSearch, comSearch, handleBiNameSearchState, handleComNameSearchState}) {
 
