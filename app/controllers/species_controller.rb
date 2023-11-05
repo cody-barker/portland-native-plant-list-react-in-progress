@@ -26,7 +26,8 @@ class SpeciesController < ApplicationController
         :light,
         :moisture,
         :photo,
-        :acknowledgement
+        :acknowledgement,
+        :photographer
       )
     end
 
