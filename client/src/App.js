@@ -1,9 +1,7 @@
 import './styles/App.css';
-import React, {useState, useEffect} from 'react'
 import { Routes, Route } from "react-router-dom"
 import NavBar from './components/NavBar'
 import Home from './pages/Home'
-import PlantForm from './components/PlantForm'
 import AllPlants from './pages/AllPlants'
 import Trees from './pages/Trees'
 import Shrubs from './pages/Shrubs'
@@ -11,9 +9,7 @@ import Grasses from './pages/Grasses'
 import Herbs from './pages/Herbs'
 import { SearchProvider } from './SearchContext'
 
-
 function App() {
-
 
   return (
     <SearchProvider>
