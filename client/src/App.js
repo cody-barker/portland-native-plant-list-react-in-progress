@@ -22,7 +22,7 @@ function App() {
           <Route path="/shrubs" element={<Shrubs />}/>
           <Route path="/grasses" element={<Grasses />}/>
           <Route path="/herbs" element={<Herbs />}/>
-          <Route path="*" element={<h1>404 not found</h1>}/>
+          <Route path="*" element={<h1>404 Not Found - Please Return to the Home Page</h1>}/>
         </Routes>
       </div>
     </SearchProvider>
