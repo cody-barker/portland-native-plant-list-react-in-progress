@@ -1,7 +1,4 @@
 # Portland Native Plant List
-## Flatiron School Phase 2 Project
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Features
 
@@ -16,21 +13,22 @@ The site allows you to search for and add plants to the database, as well as vie
 
 In the project directory, you can run:
 
-### `npm start`
+### Backend
+### `rails s`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Runs a local server to host the plant list data.\
+Open [http://localhost:3000/species](http://localhost:3000/species) to view it in your browser.
+
+### Frontend
+#### `npm start --prefix client`
+
+Runs the client in development mode.\
+Open [http://localhost:4000](http://localhost:4000) to view it in your browser.
 
 The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm run server`
-
-Runs a local json server to host the plant list data.\
-Open [http://localhost:3001/plantlist](http://localhost:3001/plantlist) to view it in your browser.
 
 ## For Contributors
-If you'd like to contribute to the database, you may fork this repo and submit your changes for approval to codybarker.or@gmail.com
+If you'd like to contribute to the database, please email me at codybarker.or@gmail.com We need images!
 
 ##  Support
 e: codybarker.or@gmail.com
@@ -40,5 +38,6 @@ In development and unlicensed
 
 ## Author
 Cody Barker
+https://codybarker.dev
 
 
