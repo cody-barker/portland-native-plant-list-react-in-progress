@@ -1,5 +1,17 @@
 class RemoveUsers < ActiveRecord::Migration[6.1]
   def change
-    drop_table :users
+    reversible do |dir|
+      dir.up do
+        # Create the table if it doesn't exist
+        create_table :users do |t|
+          # Define the table schema here
+        end
+      end
+
+      dir.down do
+        # Drop the table
+        drop_table :users, if_exists: true
+      end
+    end
   end
 end

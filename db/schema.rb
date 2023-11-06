@@ -15,6 +15,9 @@ ActiveRecord::Schema.define(version: 2023_11_05_210149) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "projects", force: :cascade do |t|
+  end
+
   create_table "species", force: :cascade do |t|
     t.string "binomialName"
     t.string "commonName"
@@ -29,6 +32,15 @@ ActiveRecord::Schema.define(version: 2023_11_05_210149) do
     t.string "height"
     t.string "acknowledgement"
     t.string "photographer"
+  end
+
+  create_table "tasks", force: :cascade do |t|
+  end
+
+  create_table "teams", force: :cascade do |t|
+  end
+
+  create_table "users", force: :cascade do |t|
   end
 
 end
