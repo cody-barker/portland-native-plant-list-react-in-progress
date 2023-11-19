@@ -83,16 +83,25 @@ form {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
   padding: 2%;
   padding-left: 8%;
   padding-right: 8%;
+  background-color:#e8faec;
 }
 
 input[type=text] {
-  width: 25%;
+  font-family: 'DM Sans', sans-serif;
+  width: 26%;
   padding: 10px;
   margin: 1%;
+  background-color: #004d40;
+  border-radius: 5px;
+  color: #ffffff;
+}
+
+::placeholder {
+  color: #ffffff;
 }
 
 button {
@@ -100,7 +109,7 @@ button {
   border-radius: 0.5em;
 }
 
-button:hover {
+/* button:hover {
   color: #ffffff;
   cursor: pointer;
 }
@@ -109,15 +118,26 @@ button[type=submit]{
   margin: 10px;
   width: 80px;
   height: 40px;
-}
+} */
 
-.plant-card {
+/* .plant-card {
   display: inline-block;
   height: auto;
   width: 300px;
   margin: 10px;
   border: 2px solid #5c5c5c;
   border-radius: 0.25em;
+} */
+
+.plant-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  color: #004d40;
+  border: 2px solid #004d40;
+  padding: 2%;
+  margin: 1%;
 }
 
 h2#latin {
