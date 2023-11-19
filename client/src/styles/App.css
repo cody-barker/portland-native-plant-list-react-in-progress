@@ -91,6 +91,11 @@ footer a:hover {
 
 .filter-btn {
   margin: 1%;
+  background-color: #ffffff;
+  color: #0f3138;
+  box-shadow: 0 0 7px rgba(45, 59, 38, 0.3);
+  border-radius: 20px;
+  padding: 4px 12px;
 }
 
 .filter-btns-container {
@@ -120,6 +125,7 @@ input[type=text] {
   background-color: #004d40;
   border-radius: 5px;
   color: #ffffff;
+  box-shadow: 0 0 7px rgba(45, 59, 38, 0.3);
 }
 
 ::placeholder {
@@ -161,6 +167,7 @@ table {
   width: 92%;
   margin-left: 4%;
   margin-right: 4%;
+  box-shadow: 0 0 7px rgba(45, 59, 38, 0.3);
 }
 
 table tr, td, th{
