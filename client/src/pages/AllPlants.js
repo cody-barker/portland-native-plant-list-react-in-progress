@@ -1,4 +1,4 @@
-import {useContext} from 'react'
+import {useContext, useState} from 'react'
 import Plant from '../components/Plant'
 import Search from '../components/Search'
 import { SearchContext } from '../SearchContext'
@@ -14,15 +14,25 @@ function AllPlants() {
     const plantSearch = plantsSorted.filter(plant => plant.binomialName.split(" ").join("").toLowerCase().includes(biSearch.split(" ").join("").toLowerCase()) && plant.commonName.split(" ").join("").toLowerCase().includes(comSearch.split(" ").join("").toLowerCase()))
     const searchComps = plantSearch.map(plant => <Plant plant={plant} key={plant.id}/>)
     
+    const [type, setType] = useState("type")
+
     return(
         <div>
             <div className="filters-container">
                 <Search handleBiNameSearchState={handleBiNameSearchState} handleComNameSearchState={handleComNameSearchState} biSearch={biSearch} comSearch={comSearch}/>
-                <div className='filter-btns-container'>
-                    <button className="filter-btn">Type <img src={caretDown}/></button>
-                    <button className="filter-btn">Height <img src={caretDown}/></button>
-                    <button className="filter-btn">Moisture <img src={caretDown}/></button>
-                    <button className="filter-btn">Light <img src={caretDown}/></button>
+                <div className='select-container'>
+                    <select onChange={(e) => setType(e.target.value)} value={type}><img src={caretDown}/>
+                        <option value="">All Types</option>
+                        <option value="tree">Tree</option>
+                        <option value="shrub">Shrub</option>
+                        <option value="grass">Grass</option>
+                        <option value="herb">Herb</option>
+                    </select>
+                    
+                    
+                    {/* <select>Height <img src={caretDown}/></select>
+                    <select>Moisture <img src={caretDown}/></select>
+                    <select>Light <img src={caretDown}/></select> */}
                 </div>
             </div>
             <table>
