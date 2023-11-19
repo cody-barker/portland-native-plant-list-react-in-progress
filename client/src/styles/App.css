@@ -80,15 +80,19 @@ footer a:hover {
 }
 
 form {
-  padding: 20px;
-  margin: auto;
-  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 2%;
+  padding-left: 8%;
+  padding-right: 8%;
 }
 
 input[type=text] {
-  width: 90%;
+  width: 25%;
   padding: 10px;
-  margin: 5px;
+  margin: 1%;
 }
 
 button {
