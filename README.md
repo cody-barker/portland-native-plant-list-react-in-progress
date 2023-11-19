@@ -2,12 +2,9 @@
 
 ## Features
 
-The Portland Native Plant List is an expansive resource containing plants native to Portland, Oregon.\
+Portland Native Plants is an expansive resource containing plants native to Portland, Oregon.\
 All of the plants on this list could be suitable for backyard habitats and restoration projects alike.\
-The site allows you to search for and add plants to the database, as well as view them ordered by type.
-
-<img src ="public/Phase-2-Project-README-GIF.gif" alt="app.gif">
-<a href="https://youtu.be/qwquisbZK-U" alt=app.video>Click here for a more detailed video of the app features.</a>
+The site allows you to search for plants by binomial name, common name, and type.
 
 ## Available Scripts
 
