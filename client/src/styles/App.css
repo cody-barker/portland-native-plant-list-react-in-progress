@@ -89,7 +89,19 @@ footer a:hover {
   padding-right: 4%;
 }
 
+.filter-btns-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  padding-left: 4%;
+  padding-right: 4%;
+}
+
 .filter-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 1%;
   background-color: #ffffff;
   color: #0f3138;
@@ -98,11 +110,9 @@ footer a:hover {
   padding: 4px 12px;
 }
 
-.filter-btns-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row;
+.filter-btn img {
+  width: 12px;
+  margin-left: 3px;
 }
 
 form {

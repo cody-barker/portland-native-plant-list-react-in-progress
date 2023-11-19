@@ -3,6 +3,7 @@ import Plant from '../components/Plant'
 import Search from '../components/Search'
 import { SearchContext } from '../SearchContext'
 import { SpeciesContext } from '../SpeciesContext'
+import caretDown from '../assets/caret-down.svg'
 
 function AllPlants() {
 
@@ -18,10 +19,10 @@ function AllPlants() {
             <div className="filters-container">
                 <Search handleBiNameSearchState={handleBiNameSearchState} handleComNameSearchState={handleComNameSearchState} biSearch={biSearch} comSearch={comSearch}/>
                 <div className='filter-btns-container'>
-                    <button className="filter-btn">Type</button>
-                    <button className="filter-btn">Height</button>
-                    <button className="filter-btn">Moisture</button>
-                    <button className="filter-btn">Light</button>
+                    <button className="filter-btn">Type <img src={caretDown}/></button>
+                    <button className="filter-btn">Height <img src={caretDown}/></button>
+                    <button className="filter-btn">Moisture <img src={caretDown}/></button>
+                    <button className="filter-btn">Light <img src={caretDown}/></button>
                 </div>
             </div>
             <table>
