@@ -13,7 +13,6 @@ function App() {
 
   return (
     <SearchProvider>
-      <div className="app">
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />}/>
@@ -24,7 +23,6 @@ function App() {
           <Route path="/herbs" element={<Herbs />}/>
           <Route path="*" element={<h1>404 Not Found - Please Return to the Home Page</h1>}/>
         </Routes>
-      </div>
     </SearchProvider>
   )
 }
