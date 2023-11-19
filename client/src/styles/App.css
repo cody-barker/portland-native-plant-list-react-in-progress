@@ -2,6 +2,8 @@
 
 body {
   font-family: 'DM Sans', sans-serif;
+  min-height: 100vh;
+  margin: 0;
   font-size: 14px;
   background-color: #ffffff;
   letter-spacing: 0.075em;
@@ -58,20 +60,19 @@ header h3 {
 
 footer {
   background-color:#ffffff;
-  min-height: 18vh;
+  min-height: 20vh;
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-direction: row;
   text-decoration: none;
-  padding-left: 40%;
-  padding-right: 40%;
 }
 
 footer a{
   color: #004d40;
   text-decoration: none;
   transition: transform 0.5s ease;
+  padding: 20px;
 }
 
 footer a:hover {
@@ -120,7 +121,7 @@ button[type=submit]{
   height: 40px;
 } */
 
-.plant-card {
+/* .plant-card {
   display: inline-block;
   height: auto;
   width: 200px;
@@ -132,11 +133,24 @@ button[type=submit]{
   padding: 0.5%;
   padding-left: 2%;
   padding-right: 2%;
-}
+} */
 
 .plant-cards-container {
   background-color: #ffffff;
 }
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table tr, td, th{
+  border: 1px solid black;
+  color: black;
+  padding: 3px;
+}
+
+
 
 p#latin {
   font-style: italic;

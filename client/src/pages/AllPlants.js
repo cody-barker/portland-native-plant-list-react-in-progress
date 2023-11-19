@@ -16,7 +16,21 @@ function AllPlants() {
     return(
         <div className="plant-cards-container">
             <Search handleBiNameSearchState={handleBiNameSearchState} handleComNameSearchState={handleComNameSearchState} biSearch={biSearch} comSearch={comSearch}/>
-            {biSearch === "" && comSearch === "" ? allPlantsComps : searchComps}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Binomial Name</th>
+                        <th>Common Name</th>
+                        <th>Type</th>
+                        <th>Height</th>
+                        <th>Moisture</th>
+                        <th>Light</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {biSearch === "" && comSearch === "" ? allPlantsComps : searchComps}
+                </tbody>
+            </table>
         </div>
     )
 }
