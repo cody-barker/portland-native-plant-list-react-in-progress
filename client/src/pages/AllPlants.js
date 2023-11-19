@@ -32,7 +32,7 @@ function AllPlants() {
   }
 
   return (
-    <div>
+    <div className="table-container">
       <div className="filters-container">
         <Search
           handleBiNameSearchState={handleBiNameSearchState}
