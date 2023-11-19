@@ -14,7 +14,7 @@ body {
 
 #navbar {
   max-width: 1520px;
-  max-height: 5vh;
+  max-height: 10vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,8 +40,7 @@ a:hover {
 
 header {
   background-color: #004d40;
-  max-height: 85vh;
-  min-height: 85vh;
+  height: 80vh;
   overflow: hidden;
   display: flex;
   justify-content: center;
