@@ -56,7 +56,7 @@ function AllPlants() {
             <th>Binomial Name</th>
             <th>Common Name</th>
             <th>Type</th>
-            <th>Height</th>
+            <th>Max Height (ft)</th>
             <th>Moisture</th>
             <th>Light</th>
           </tr>
