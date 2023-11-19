@@ -57,7 +57,7 @@ header h3 {
 }
 
 footer {
-  background-color:#e8faec;
+  background-color:#ffffff;
   min-height: 18vh;
   display: flex;
   justify-content: space-around;
@@ -80,6 +80,7 @@ footer a:hover {
 }
 
 form {
+  min-height: 10vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -87,7 +88,7 @@ form {
   padding: 2%;
   padding-left: 8%;
   padding-right: 8%;
-  background-color:#e8faec;
+  background-color:#ffffff;
 }
 
 input[type=text] {
@@ -120,26 +121,25 @@ button[type=submit]{
   height: 40px;
 } */
 
-/* .plant-card {
+.plant-card {
   display: inline-block;
   height: auto;
   width: 300px;
   margin: 10px;
-  border: 2px solid #5c5c5c;
-  border-radius: 0.25em;
-} */
-
-.plant-card {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row;
-  color: #004d40;
   border: 2px solid #004d40;
-  padding: 2%;
-  margin: 1%;
+  border-radius: 5px;
+  color: #0f3138;
+  background-color: #e8faec;
+  padding: 0.5%;
+  padding-left: 2%;
+  padding-right: 2%;
 }
 
-h2#latin {
+.plant-cards-container {
+  background-color: #ffffff;
+}
+
+p#latin {
   font-style: italic;
+  font-weight: 800;
 }

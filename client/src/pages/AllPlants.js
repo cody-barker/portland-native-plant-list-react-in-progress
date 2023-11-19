@@ -14,7 +14,7 @@ function AllPlants() {
     const searchComps = plantSearch.map(plant => <Plant plant={plant} key={plant.id}/>)
     
     return(
-        <div>
+        <div className="plant-cards-container">
             <Search handleBiNameSearchState={handleBiNameSearchState} handleComNameSearchState={handleComNameSearchState} biSearch={biSearch} comSearch={comSearch}/>
             {biSearch === "" && comSearch === "" ? allPlantsComps : searchComps}
         </div>

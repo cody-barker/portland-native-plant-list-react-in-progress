@@ -14,7 +14,7 @@ function Trees() {
     const searchComps = treeSearch.map(plant => <Plant plant={plant} key={plant.id}/>)
 
     return(
-        <div>
+        <div className="plant-cards-container">
             <Search biSearch={biSearch} comSearch={comSearch} handleBiNameSearchState={handleBiNameSearchState} handleComNameSearchState={handleComNameSearchState}/>
             {biSearch === "" && comSearch === ""? treeComps : searchComps}
         </div>

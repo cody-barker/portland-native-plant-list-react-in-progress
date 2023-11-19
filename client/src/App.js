@@ -8,6 +8,7 @@ import Shrubs from './pages/Shrubs'
 import Grasses from './pages/Grasses'
 import Herbs from './pages/Herbs'
 import { SearchProvider } from './SearchContext'
+import Footer from './components/Footer'
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
           <Route path="/herbs" element={<Herbs />}/>
           <Route path="*" element={<h1>404 Not Found - Please Return to the Home Page</h1>}/>
         </Routes>
+        <Footer />
     </SearchProvider>
   )
 }
