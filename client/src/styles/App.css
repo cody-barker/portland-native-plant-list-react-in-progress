@@ -85,8 +85,8 @@ footer a:hover {
   justify-content: space-around;
   align-items: center;
   flex-direction: row;
-  padding-left: 4%;
-  padding-right: 4%;
+  padding-left: 20%;
+  padding-right: 20%;
 }
 
 .selects-container {
