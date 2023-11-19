@@ -31,6 +31,10 @@ function AllPlants() {
     setType(e.target.value);
   }
 
+  function columnSort(e) {
+    
+  }
+
   return (
     <div className="table-container">
       <div className="filters-container">
