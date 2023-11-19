@@ -147,7 +147,7 @@ button {
 table {
   border-collapse: collapse;
   margin: 0 auto;
-  width: 92%;
+  max-width: 92%;
   margin-left: 4%;
   margin-right: 4%;
   box-shadow: 0 0 7px rgba(45, 59, 38, 0.3);
