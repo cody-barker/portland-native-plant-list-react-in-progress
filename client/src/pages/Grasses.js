@@ -1,5 +1,5 @@
 import {useContext} from 'react'
-import Plant from './Plant'
+import Plant from '../components/Plant'
 import Search from '../components/Search'
 import { SearchContext } from '../SearchContext'
 import { SpeciesContext } from '../SpeciesContext'
