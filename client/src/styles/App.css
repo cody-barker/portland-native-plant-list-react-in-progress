@@ -112,7 +112,7 @@ option {
 
 form {
   min-height: 10vh;
-  width: 400px;
+  min-width: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -169,7 +169,8 @@ button[type=submit]{
 
 table {
   border-collapse: collapse;
-  width: 92%;
+  margin: 0 auto;
+  max-width: 92%;
   margin-left: 4%;
   margin-right: 4%;
   box-shadow: 0 0 7px rgba(45, 59, 38, 0.3);
