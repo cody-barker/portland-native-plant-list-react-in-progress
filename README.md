@@ -1,4 +1,4 @@
-# Portland Native Plant List
+# Portland Native Plants
 
 ## Features
 
