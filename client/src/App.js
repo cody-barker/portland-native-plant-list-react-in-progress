@@ -13,7 +13,7 @@ function App() {
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />}/>
-          <Route path="/allplants" element={<AllPlants />}/>
+          <Route path="/plants" element={<AllPlants />}/>
           <Route path="*" element={<h1>404 Not Found - Please Return to the Home Page</h1>}/>
         </Routes>
         <Footer />
