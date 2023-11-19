@@ -141,7 +141,9 @@ button[type=submit]{
 
 table {
   border-collapse: collapse;
-  width: 100%;
+  width: 92%;
+  margin-left: 4%;
+  margin-right: 4%;
 }
 
 table tr, td, th{
@@ -149,8 +151,6 @@ table tr, td, th{
   color: black;
   padding: 3px;
 }
-
-
 
 p#latin {
   font-style: italic;
