@@ -60,10 +60,12 @@ footer {
   background-color:#e8faec;
   min-height: 18vh;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
   text-decoration: none;
+  padding-left: 40%;
+  padding-right: 40%;
 }
 
 footer a{
