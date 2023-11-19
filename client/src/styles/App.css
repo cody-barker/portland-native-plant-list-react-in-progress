@@ -3,8 +3,9 @@
 body {
   font-family: 'DM Sans', sans-serif;
   font-size: 16px;
-  background-color: #ffffffa2;
-  color: #2c580f;
+  background-color: #ffffff;
+  letter-spacing: 0.075em;
+  color: #ffffff;
   text-align: center;
 }
 
@@ -23,7 +24,7 @@ body {
 nav a{
   display: inline-block;
   padding: 16px;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   text-decoration: none;
   color: #ffffff;
 }
@@ -33,14 +34,35 @@ a:hover {
 }
 
 header {
-  background-color: #e8faec;
+  background-color: #004d40;
+  max-height: 80vh;
+  min-height: 760px;
+  overflow: hidden;
   display: flex;
-  flex: 1;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding-left: 4%;
+  padding-right: 4%;
 }
 
+header h1, h2, h3{
+  font-weight: 300;
+}
+
+header h3 {
+  font-style: italic;
+}
+
+footer p{
+  background-color:#e8faec;
+  color: #004d40;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8%;
+  margin: 0 auto;
+}
 
 form {
   padding: 20px;
@@ -81,14 +103,4 @@ button[type=submit]{
 
 h2#latin {
   font-style: italic;
-}
-
-.app {
-  height: 500px;
-  width: auto;
-}
-
-#background {
-  width: 400px;
-  margin-top: 20px;
 }
