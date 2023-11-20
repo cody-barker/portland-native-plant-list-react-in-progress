@@ -6,14 +6,21 @@ class SpeciesController < ApplicationController
   end
 
   def show
-    species = Species.all.find(params[:id])
-    render json: plant, status: :ok
+    species = Species.find(params[:id])
+    render json: species, status: :ok
+  end
+
+  def update
+    species = Species.find(params[:id])
+    species.update!(species_params)
+    render json: species, status: :ok
   end
 
   def create
     species = Species.create!(species_params)
     render json: species, status: :created
   end
+
 
   private
     def species_params
@@ -23,8 +30,8 @@ class SpeciesController < ApplicationController
         :speciesType,
         :min_height,
         :max_height,
-        :light,
-        :moisture,
+        :lightRequirement,
+        :moistureRequirement,
         :photo,
         :acknowledgement,
         :photographer
