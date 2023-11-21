@@ -6,6 +6,8 @@ Portland Native Plants is an expansive resource containing plants native to Port
 All of the plants on this list could be suitable for backyard habitats and restoration projects alike.\
 The site allows you to search for plants by binomial name, common name, and type.
 
+<img src="public/portland_native_plants_preview.gif" alt="gif preview"/>
+
 ## Available Scripts
 
 In the project directory, you can run:
