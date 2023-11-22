@@ -15,7 +15,7 @@ function AllPlants() {
   } = useContext(SearchContext);
 
   const { allPlants } = useContext(SpeciesContext);
-  const [sort, setSort] = useState({keyToSort: "Binomial Name", direction: "asc"})
+  const [sort, setSort] = useState({keyToSort: "binomialName", direction: "asc"})
   const [type, setType] = useState('');
   // let plantsSorted = [...allPlants].sort(compare);
   // let plantsSorted = getSortedArray(allPlants)
