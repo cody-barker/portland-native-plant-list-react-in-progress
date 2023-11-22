@@ -3,6 +3,7 @@ import Plant from '../components/Plant';
 import Search from '../components/Search';
 import { SearchContext } from '../SearchContext';
 import { SpeciesContext } from '../SpeciesContext';
+import Caret from '../icons/Caret.jsx'
 
 function AllPlants() {
   const {
@@ -12,32 +13,80 @@ function AllPlants() {
     handleComNameSearchState,
     compare,
   } = useContext(SearchContext);
+
   const { allPlants } = useContext(SpeciesContext);
-
+  const [sort, setSort] = useState({keyToSort: "Binomial Name", direction: "asc"})
   const [type, setType] = useState('');
-
-  const plantsSorted = [...allPlants].sort(compare);
-
-  const filteredPlants = plantsSorted.filter(
+  // let plantsSorted = [...allPlants].sort(compare);
+  // let plantsSorted = getSortedArray(allPlants)
+  // let filteredPlants = plantsSorted.filter(
+  //   (plant) =>
+  //     (biSearch === '' || plant.binomialName.toLowerCase().includes(biSearch.toLowerCase())) &&
+  //     (comSearch === '' || plant.commonName.toLowerCase().includes(comSearch.toLowerCase())) &&
+  //     (type === '' || plant.speciesType.toLowerCase() === type.toLowerCase())
+  // );
+  let filteredPlants = getSortedArray(allPlants.filter(
     (plant) =>
       (biSearch === '' || plant.binomialName.toLowerCase().includes(biSearch.toLowerCase())) &&
       (comSearch === '' || plant.commonName.toLowerCase().includes(comSearch.toLowerCase())) &&
       (type === '' || plant.speciesType.toLowerCase() === type.toLowerCase())
-  );
+  ));
 
-  const plantComps = filteredPlants.map((plant) => <Plant plant={plant} key={plant.id} />);
-
+  console.log(filteredPlants)
+  let plantComps = filteredPlants.map((plant) => <Plant plant={plant} key={plant.id} />);
+ 
   function changeType(e) {
     setType(e.target.value);
   }
 
-  const headers = ["Binomial Name", "Common Name", "Type", "Max Height (ft)", "Moisture", "Light"]
+  const headers = [
+    {
+      id: 1,
+      KEY: "binomialName",
+      LABEL: "Binomial Name"
+    },
+    {
+      id: 2,
+      KEY: "commonName",
+      LABEL: "Common Name"
+    },
+    {
+      id: 3,
+      KEY: "Type",
+      LABEL: "Type"
+    },
+    {
+      id: 4,
+      KEY: "height",
+      LABEL: "Max Height (ft)"
+    },
+    {
+      id: 5,
+      KEY: "moistureRequirement",
+      LABEL: "Moisture"
+    },
+    {
+      id: 6,
+      KEY: "lightRequirement",
+      LABEL: "Light"
+    }
+  ]
+  
   const types = ["Tree", "Shrub", "Grass", "Herb"]
 
-  const [sort, setSort] = useState({keyToSort: "Binomial Name", direction: "asc"})
-
   function handleHeaderClick(header) {
-    console.log(header)
+    setSort({
+      keyToSort: header.KEY,
+      direction:
+        header.KEY === sort.keyToSort ? sort.direction === 'asc' ? 'desc' : 'asc' : 'desc'
+    })
+  }
+
+  function getSortedArray(arrayToSort) {
+    if (sort.direction === 'asc') {
+      return arrayToSort.sort((a, b) => (a[sort.keyToSort] > b[sort.keyToSort] ? 1 : -1))
+    }
+    return arrayToSort.sort((a, b) => (a[sort.keyToSort] > b[sort.keyToSort] ? -1 : 1))
   }
 
   return (
@@ -62,13 +111,30 @@ function AllPlants() {
         <thead>
           <tr>
            {headers.map((header, index) => (
-            <th key={index}>
-              <span>{header}</span>
+            <th key={index} onClick={() => handleHeaderClick(header)}>
+              <div className="header-container">
+                <span>{header.LABEL}</span>
+                  {header.KEY === sort.keyToSort && (
+                    <Caret direction={sort.keyToSort === header.KEY ? sort.direction : 'asc'}
+                    />
+                  )}
+              </div>
             </th>
            ))}
           </tr>
         </thead>
         <tbody>{plantComps}</tbody>
+        {/* <tbody>
+          {getSortedArray(allPlants).map((row, index) => {
+            <tr key={index}>
+              {headers.map((header, index) => (
+                <td title={row[header.KEY]} key={index}>
+                  {row[header.KEY]}
+                </td>
+              ))}
+            </tr>
+          })}
+        </tbody> */}
       </table>
     </div>
   );

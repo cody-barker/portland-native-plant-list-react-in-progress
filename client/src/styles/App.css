@@ -166,6 +166,30 @@ table tr, td, th{
   word-wrap: break-word;
 }
 
+th { 
+  user-select: none;
+  cursor: pointer;
+}
+
+th svg {
+  max-width: 10px;
+}
+
+th svg.asc {
+  transform: rotate(0deg);
+}
+
+th svg.desc {
+  transform: rotate(180deg)
+}
+
+.header-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 #latin {
   font-style: italic;
 }
