@@ -52,7 +52,7 @@ function AllPlants() {
     },
     {
       id: 3,
-      KEY: "Type",
+      KEY: "speciesType",
       LABEL: "Type"
     },
     {
