@@ -16,13 +16,7 @@ function SearchProvider({children}) {
   }
 
   function compare(a, b) {
-    if (a.binomialName.toLowerCase() < b.binomialName.toLowerCase()) {
-        return -1
-    }
-    if (a.binomialName.toLowerCase() > b.binomialName.toLowerCase()) {
-        return 1
-    }
-    return 0
+   return a.binomialName.toLowerCase() < b.binomialName.toLowerCase() ? -1 : 1
   }
   
 
