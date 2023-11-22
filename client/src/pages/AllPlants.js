@@ -11,20 +11,12 @@ function AllPlants() {
     comSearch,
     handleBiNameSearchState,
     handleComNameSearchState,
-    compare,
   } = useContext(SearchContext);
 
   const { allPlants } = useContext(SpeciesContext);
   const [sort, setSort] = useState({keyToSort: "binomialName", direction: "asc"})
   const [type, setType] = useState('');
-  // let plantsSorted = [...allPlants].sort(compare);
-  // let plantsSorted = getSortedArray(allPlants)
-  // let filteredPlants = plantsSorted.filter(
-  //   (plant) =>
-  //     (biSearch === '' || plant.binomialName.toLowerCase().includes(biSearch.toLowerCase())) &&
-  //     (comSearch === '' || plant.commonName.toLowerCase().includes(comSearch.toLowerCase())) &&
-  //     (type === '' || plant.speciesType.toLowerCase() === type.toLowerCase())
-  // );
+  
   let filteredPlants = getSortedArray(allPlants.filter(
     (plant) =>
       (biSearch === '' || plant.binomialName.toLowerCase().includes(biSearch.toLowerCase())) &&
@@ -32,7 +24,6 @@ function AllPlants() {
       (type === '' || plant.speciesType.toLowerCase() === type.toLowerCase())
   ));
 
-  console.log(filteredPlants)
   let plantComps = filteredPlants.map((plant) => <Plant plant={plant} key={plant.id} />);
  
   function changeType(e) {
@@ -73,7 +64,7 @@ function AllPlants() {
   ]
   
   const types = ["Tree", "Shrub", "Grass", "Herb"]
-
+  
   function handleHeaderClick(header) {
     setSort({
       keyToSort: header.KEY,
@@ -124,17 +115,6 @@ function AllPlants() {
           </tr>
         </thead>
         <tbody>{plantComps}</tbody>
-        {/* <tbody>
-          {getSortedArray(allPlants).map((row, index) => {
-            <tr key={index}>
-              {headers.map((header, index) => (
-                <td title={row[header.KEY]} key={index}>
-                  {row[header.KEY]}
-                </td>
-              ))}
-            </tr>
-          })}
-        </tbody> */}
       </table>
     </div>
   );

@@ -14,12 +14,7 @@ function SearchProvider({children}) {
   function handleComNameSearchState(e) {
     setComSearch(e.target.value)
   }
-
-  function compare(a, b) {
-   return a.binomialName.toLowerCase() < b.binomialName.toLowerCase() ? -1 : 1
-  }
   
-
   return(
     <SearchContext.Provider value={
       { 
@@ -28,8 +23,8 @@ function SearchProvider({children}) {
         comSearch,
         setComSearch,
         handleBiNameSearchState,
-        handleComNameSearchState,
-        compare}
+        handleComNameSearchState
+        }
       }>
       {children}
     </SearchContext.Provider>
