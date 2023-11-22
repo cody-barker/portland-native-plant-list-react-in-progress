@@ -31,6 +31,15 @@ function AllPlants() {
     setType(e.target.value);
   }
 
+  const headers = ["Binomial Name", "Common Name", "Type", "Max Height (ft)", "Moisture", "Light"]
+  const types = ["Tree", "Shrub", "Grass", "Herb"]
+
+  const [sort, setSort] = useState({keyToSort: "Binomial Name", direction: "asc"})
+
+  function handleHeaderClick(header) {
+    console.log(header)
+  }
+
   return (
     <div className="table-container">
       <div className="filters-container">
@@ -43,22 +52,20 @@ function AllPlants() {
         <div className="select-container">
           <select onChange={changeType} value={type}>
             <option value="">All Types</option>
-            <option value="tree">Tree</option>
-            <option value="shrub">Shrub</option>
-            <option value="grass">Grass</option>
-            <option value="herb">Herb</option>
+            {types.map((type, index) => {
+              return <option key={index} value={type}>{type}</option>
+            })}
           </select>
         </div>
       </div>
       <table>
         <thead>
           <tr>
-            <th>Binomial Name</th>
-            <th>Common Name</th>
-            <th>Type</th>
-            <th>Max Height (ft)</th>
-            <th>Moisture</th>
-            <th>Light</th>
+           {headers.map((header, index) => (
+            <th key={index}>
+              <span>{header}</span>
+            </th>
+           ))}
           </tr>
         </thead>
         <tbody>{plantComps}</tbody>
