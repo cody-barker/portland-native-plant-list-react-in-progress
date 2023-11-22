@@ -30,6 +30,7 @@ class SpeciesController < ApplicationController
         :speciesType,
         :min_height,
         :max_height,
+        :height,
         :lightRequirement,
         :moistureRequirement,
         :photo,
