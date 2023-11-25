@@ -15,9 +15,15 @@ class AdminsController < ApplicationController
       render json: admin, status: :created
   end
 
+  def destroy
+    admin = Admin.find(params[:id])
+    admin.destroy
+    render json: admin, status: :ok
+  end
+
   private
 
-  def user_params
+  def admin_params
       params.permit(
           :username, 
           :password,

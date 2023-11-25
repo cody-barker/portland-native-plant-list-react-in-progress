@@ -51,8 +51,6 @@ function Login() {
     })
   }
 
-  //render errors below the form
-
   return(
     <div className="login-container">
       <p className="dark-green">Login for Admins Only</p>
