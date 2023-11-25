@@ -14,5 +14,4 @@ class SessionsController < ApplicationController
     session.delete(:admin_id)
     render json: {}, status: :ok
   end
-
 end
