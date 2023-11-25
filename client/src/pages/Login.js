@@ -43,7 +43,7 @@ function Login() {
         <input className="login-input" onChange={onInputChange} name="username" type="text" value={username} placeholder="Username"></input>
         <input className="login-input" onChange={onInputChange} name="password"type="password" value={password} placeholder="Password"></input>
         <input className="login-input" onChange={onInputChange} name="passwordConfirmation" type="password" value={passwordConfirmation} placeholder="Confirm Password"></input>
-        <button type="submit">Submit</button>
+        <button type="submit">{isLoading? "Loading" : "Submit"}</button>
       </form>
     </div>
   )

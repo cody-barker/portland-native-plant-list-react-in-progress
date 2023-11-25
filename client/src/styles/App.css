@@ -152,6 +152,10 @@ button[type=submit] {
   color: white;
 }
 
+button[type=submit]:hover {
+  cursor: pointer;
+}
+
 .table-container {
   min-height: 85vh;
 }
