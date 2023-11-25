@@ -1,7 +1,9 @@
 import { useState, useContext } from 'react'
 import { AdminContext } from '../AdminContext'
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
+  const navigate = useNavigate()
   const {setAdmin} = useContext(AdminContext)
   const [inputState, setInputState] = useState({
     username: "",
@@ -45,6 +47,7 @@ function Login() {
       setIsLoading(false)
       if (r.ok) {
         r.json().then((admin) => setAdmin(admin))
+        navigate("/plants")
       } else {
         r.json().then((error) => setErrors(error.errors))
       }
