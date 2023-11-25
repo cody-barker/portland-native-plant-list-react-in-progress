@@ -213,6 +213,8 @@ th svg.desc {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  width: 50%;
+  margin: 0 auto;
 }
 
 .login-input {
