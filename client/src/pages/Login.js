@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import { AdminContext } from '../AdminContext'
 
 function Login() {
   const {setAdmin} = useContext(AdminContext)
@@ -23,15 +24,7 @@ function Login() {
 
   const [isLoading, setIsLoading] = useState(false)
   const [errors, setErrors] = useState([])
-  const errorComps = errors.map((e, index) => (
-    <div key={index} className="error-container">
-        {e.errors.map((errorMessage, i) => (
-            <p key={i} className="errors">
-                {errorMessage}
-            </p>
-        ))}
-    </div>
-));
+
   const formData = {
     username,
     password,
@@ -69,7 +62,9 @@ function Login() {
         <input className="login-input" onChange={onInputChange} name="passwordConfirmation" type="password" value={passwordConfirmation} placeholder="Confirm Password"></input>
         <button type="submit">{isLoading? "Loading" : "Submit"}</button>
       </form>
-      {errors.length > 0 ? errorComps : null}
+      {errors.map((error) => (
+        <p className="error-message">{error}</p>
+      ))}
     </div>
   )
 }

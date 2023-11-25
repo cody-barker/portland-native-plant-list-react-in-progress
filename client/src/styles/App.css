@@ -227,3 +227,7 @@ th svg.desc {
   color: #ffffff;
   box-shadow: 0 0 7px rgba(45, 59, 38, 0.3);
 }
+
+.error-message {
+  color: red
+}
