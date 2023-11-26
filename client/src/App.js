@@ -10,6 +10,7 @@ import Login from './pages/Login'
 import { AdminProvider } from './AdminContext'
 import { ToastContainer} from 'react-toastify';
 import PlantDetail from './pages/PlantDetail'
+import UpdatePlantForm from './components/UpdatePlantForm'
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
             <Route path="/" element={<Home />}/>
             <Route path="/plants" element={<AllPlants />}/>
             <Route path="/plants/:id" element={<PlantDetail />}/>
+            <Route path="/plants/:id/edit" element={<UpdatePlantForm />}/>
             <Route path="/login" element={<Login />}/>
             <Route path="/plants/new" element={<PlantForm />}/>
             <Route path="*" element={<h1>404 Not Found - Please Return to the Home Page</h1>}/>
