@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::API
   include ActionController::Cookies
-
   rescue_from ActiveRecord::RecordNotFound, with: :render_record_not_found_resp
   rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_resp
 

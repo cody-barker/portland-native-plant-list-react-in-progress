@@ -253,18 +253,25 @@ th svg.desc {
 .plant-detail-container {
   background-color:#004d40;
   color: #ffffff;
-  min-height: 50vh;
+  min-height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .plant-detail-container p{
   background-color:#004d40;
   color: #ffffff;
   padding: 4px;
-  margin: 0px;
+  margin: 0 auto;
 }
 
 .plant-details {
-  padding: 10%;
+  width: 50%;
+  margin: 0 auto;
+  padding: 5%;
+  border: 1px solid white;
+  border-radius: 5px;
 }
 
 .edit-button {
