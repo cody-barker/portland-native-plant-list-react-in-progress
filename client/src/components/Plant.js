@@ -1,8 +1,8 @@
-import React from 'react'
+import {NavLink} from 'react-router-dom'
 
 function Plant({plant}) {
-
     const {
+        id,
         binomial_name,
         common_name,
         species_type,
@@ -13,7 +13,11 @@ function Plant({plant}) {
 
     return(
         <tr>
-            <td id="latin">{binomial_name}</td>
+            <td id="latin">
+                <NavLink to={`/plants/${id}`}>
+                    {binomial_name}
+                </NavLink>
+            </td>
             <td>{common_name}</td>
             <td>{species_type}</td>
             <td>{height}</td>

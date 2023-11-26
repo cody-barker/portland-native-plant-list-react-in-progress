@@ -9,6 +9,7 @@ import Footer from './components/Footer'
 import Login from './pages/Login'
 import { AdminProvider } from './AdminContext'
 import { ToastContainer} from 'react-toastify';
+import PlantDetail from './pages/PlantDetail'
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />}/>
             <Route path="/plants" element={<AllPlants />}/>
+            <Route path="/plants/:id" element={<PlantDetail />}/>
             <Route path="/login" element={<Login />}/>
             <Route path="/plants/new" element={<PlantForm />}/>
             <Route path="*" element={<h1>404 Not Found - Please Return to the Home Page</h1>}/>

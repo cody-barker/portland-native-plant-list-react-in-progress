@@ -239,3 +239,48 @@ th svg.desc {
     width: 50%;
     margin: 0 auto;
 }
+
+.plant-detail-container {
+  background-color:#004d40;
+  color: #ffffff;
+  min-height: 50vh;
+}
+
+.plant-detail-container p{
+  background-color:#004d40;
+  color: #ffffff;
+  padding: 4px;
+  margin: 0px;
+}
+
+.plant-details {
+  padding: 10%;
+}
+
+.edit-button {
+  color: white;
+  text-decoration: none;
+  padding: 4px;
+}
+
+.edit-button:visited {
+  color: white;
+}
+
+.edit-button:hover {
+  color:#82fb8e
+}
+
+.delete-button {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 4px;
+}
+
+.delete-button:visited {
+  color: white;
+}
+
+.delete-button:hover {
+  color: red;
+}

@@ -3,9 +3,11 @@ import Plant from '../components/Plant';
 import Search from '../components/Search';
 import { SearchContext } from '../SearchContext';
 import { SpeciesContext } from '../SpeciesContext';
+import { AdminContext } from '../AdminContext.js';
 import Caret from '../icons/Caret.jsx'
 
 function AllPlants() {
+  const {admin} = useContext(AdminContext)
   const {
     biSearch,
     comSearch,
