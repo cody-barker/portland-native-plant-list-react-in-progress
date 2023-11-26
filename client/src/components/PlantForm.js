@@ -79,7 +79,7 @@ function PlantForm() {
                 <input required onChange={onInputChange} type="text" name="binomial_name" placeholder="Binomial Name" value={binomial_name}></input>
                 <input required onChange={onInputChange} type="text" name="common_name" placeholder="A Common Name" value={common_name}></input>
                 <input required onChange={onInputChange} type="text" name="species_type" placeholder="Type" value={species_type}></input>
-                <input required onChange={onInputChange} type="text" name="height" placeholder="Height (ft)" value={height}></input>
+                <input required onChange={onInputChange} type="number" step="0.5" min="0.5" name="height" placeholder="Height (ft)" value={height}></input>
                 <input required onChange={onInputChange} type="text" name="light" placeholder="Light Requirement" value={light}></input>
                 <input required onChange={onInputChange} type="text" name="moisture" placeholder="Moisture Requirement" value={moisture}></input>
                 <button type="submit">{isLoading ? "Loading" : "Submit"}</button>

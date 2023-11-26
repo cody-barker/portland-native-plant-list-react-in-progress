@@ -124,7 +124,7 @@ form {
   margin-right: 1%;
 }
 
-input[type=text] {
+input {
   font-family: 'DM Sans', sans-serif;
   width: 100%;
   padding: 10px;
