@@ -6,13 +6,7 @@ class SpeciesController < ApplicationController
   end
 
   def show
-    species = Species.find(params[:id])
-    render json: species, status: :ok
-  end
-
-  def update
-    species = Species.find(params[:id])
-    species.update!(species_params)
+    species = find_species
     render json: species, status: :ok
   end
 
@@ -21,8 +15,25 @@ class SpeciesController < ApplicationController
     render json: species, status: :created
   end
 
+  def update
+    species = find_species
+    species.update!(species_params)
+    render json: species, status: :ok
+  end
+
+  def destroy
+    species = find_species
+    species.destroy
+    render json: species, status: :ok
+  end
+
 
   private
+
+  def find_species
+    Species.find(params[:id])
+  end
+
     def species_params
       params.permit(
         :binomial_name,
