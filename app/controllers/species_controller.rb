@@ -25,14 +25,14 @@ class SpeciesController < ApplicationController
   private
     def species_params
       params.permit(
-        :binomialName,
-        :commonName,
-        :speciesType,
+        :binomial_name,
+        :common_name,
+        :species_type,
         :min_height,
         :max_height,
         :height,
-        :lightRequirement,
-        :moistureRequirement,
+        :light,
+        :moisture,
         :photo,
         :acknowledgement,
         :photographer

@@ -3,22 +3,22 @@ import React from 'react'
 function Plant({plant}) {
 
     const {
-        binomialName,
-        commonName,
-        speciesType,
+        binomial_name,
+        common_name,
+        species_type,
         height,
-        moistureRequirement,
-        lightRequirement
+        moisture,
+        light
     } = plant
 
     return(
         <tr>
-            <td id="latin">{binomialName}</td>
-            <td>{commonName}</td>
-            <td>{speciesType}</td>
+            <td id="latin">{binomial_name}</td>
+            <td>{common_name}</td>
+            <td>{species_type}</td>
             <td>{height}</td>
-            <td>{moistureRequirement}</td>
-            <td>{lightRequirement}</td>
+            <td>{moisture}</td>
+            <td>{light}</td>
         </tr>
     )
 }

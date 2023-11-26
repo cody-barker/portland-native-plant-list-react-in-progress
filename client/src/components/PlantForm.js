@@ -11,21 +11,21 @@ function PlantForm() {
     const {allPlants, setAllPlants} = useContext(SpeciesContext)
     const navigate = useNavigate()
     const [inputState, setInputState] = useState({
-        binomialName: "",
-        commonName: "",
-        speciesType: "",
+        binomial_name: "",
+        common_name: "",
+        species_type: "",
         height: "",
-        lightRequirement: "",
-        moistureRequirement: "",
+        light: "",
+        moisture: "",
     })
 
     const {
-        binomialName,
-        commonName,
-        speciesType,
+        binomial_name,
+        common_name,
+        species_type,
         height,
-        lightRequirement,
-        moistureRequirement
+        light,
+        moisture
     } = inputState
 
     function onInputChange(e) {
@@ -36,12 +36,12 @@ function PlantForm() {
     }
 
     const formData = {
-        binomialName,
-        commonName,
-        speciesType,
+        binomial_name,
+        common_name,
+        species_type,
         height,
-        lightRequirement,
-        moistureRequirement
+        light,
+        moisture
     }
 
     function handleSubmit(e) {
@@ -68,12 +68,12 @@ function PlantForm() {
         <div className="form-container">
             <form autoComplete="off" onSubmit={handleSubmit}>
                 <h3>Submit a New Species to the List</h3>
-                <input required onChange={onInputChange} type="text" name="binomialName" placeholder="Binomial Name" value={binomialName}></input>
-                <input required onChange={onInputChange} type="text" name="commonName" placeholder="A Common Name" value={commonName}></input>
-                <input required onChange={onInputChange} type="text" name="speciesType" placeholder="Type" value={speciesType}></input>
+                <input required onChange={onInputChange} type="text" name="binomial_name" placeholder="Binomial Name" value={binomial_name}></input>
+                <input required onChange={onInputChange} type="text" name="common_name" placeholder="A Common Name" value={common_name}></input>
+                <input required onChange={onInputChange} type="text" name="species_type" placeholder="Type" value={species_type}></input>
                 <input required onChange={onInputChange} type="text" name="height" placeholder="Height (ft)" value={height}></input>
-                <input required onChange={onInputChange} type="text" name="lightRequirement" placeholder="Light Requirement" value={lightRequirement}></input>
-                <input required onChange={onInputChange} type="text" name="moistureRequirement" placeholder="Moisture Requirement" value={moistureRequirement}></input>
+                <input required onChange={onInputChange} type="text" name="light" placeholder="Light Requirement" value={light}></input>
+                <input required onChange={onInputChange} type="text" name="moisture" placeholder="Moisture Requirement" value={moisture}></input>
                 <button type="submit">{isLoading ? "Loading" : "Submit"}</button>
             </form>
             {errors.map((error) => (

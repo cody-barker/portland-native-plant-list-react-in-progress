@@ -1,6 +1,6 @@
 class Species < ApplicationRecord
 
-  validates :commonName, :binomialName, :speciesType, :height, :lightRequirement, :moistureRequirement, presence: true
-  validates :speciesType, inclusion: { in: %w(Tree Shrub Grass Herb),
+  validates :common_name, :binomial_name, :species_type, :height, :light, :moisture, presence: true
+  validates :species_type, inclusion: { in: %w(Tree Shrub Grass Herb),
     message: "must be Tree, Shrub, Grass or Herb"}
 end

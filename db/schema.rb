@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_11_22_214835) do
+ActiveRecord::Schema.define(version: 2023_11_26_200554) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,13 +26,13 @@ ActiveRecord::Schema.define(version: 2023_11_22_214835) do
   end
 
   create_table "species", force: :cascade do |t|
-    t.string "binomialName"
-    t.string "commonName"
-    t.string "speciesType"
+    t.string "binomial_name"
+    t.string "common_name"
+    t.string "species_type"
     t.string "min_height"
     t.string "max_height"
-    t.string "lightRequirement"
-    t.string "moistureRequirement"
+    t.string "light"
+    t.string "moisture"
     t.string "photo"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

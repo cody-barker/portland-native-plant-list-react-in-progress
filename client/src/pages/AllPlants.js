@@ -14,14 +14,14 @@ function AllPlants() {
   } = useContext(SearchContext);
 
   const { allPlants } = useContext(SpeciesContext);
-  const [sort, setSort] = useState({keyToSort: "binomialName", direction: "asc"})
+  const [sort, setSort] = useState({keyToSort: "binomial_name", direction: "asc"})
   const [type, setType] = useState('');
   
   let filteredPlants = getSortedArray(allPlants.filter(
     (plant) =>
-      (biSearch === '' || plant.binomialName.toLowerCase().includes(biSearch.toLowerCase())) &&
-      (comSearch === '' || plant.commonName.toLowerCase().includes(comSearch.toLowerCase())) &&
-      (type === '' || plant.speciesType.toLowerCase() === type.toLowerCase())
+      (biSearch === '' || plant.binomial_name.toLowerCase().includes(biSearch.toLowerCase())) &&
+      (comSearch === '' || plant.common_name.toLowerCase().includes(comSearch.toLowerCase())) &&
+      (type === '' || plant.species_type.toLowerCase() === type.toLowerCase())
   ));
 
   let plantComps = filteredPlants.map((plant) => <Plant plant={plant} key={plant.id} />);
@@ -33,17 +33,17 @@ function AllPlants() {
   const headers = [
     {
       id: 1,
-      KEY: "binomialName",
+      KEY: "binomial_name",
       LABEL: "Binomial Name"
     },
     {
       id: 2,
-      KEY: "commonName",
+      KEY: "common_name",
       LABEL: "Common Name"
     },
     {
       id: 3,
-      KEY: "speciesType",
+      KEY: "species_type",
       LABEL: "Type"
     },
     {
