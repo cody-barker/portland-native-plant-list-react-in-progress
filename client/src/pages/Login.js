@@ -1,6 +1,8 @@
 import { useState, useContext } from 'react'
 import { AdminContext } from '../AdminContext'
 import { useNavigate } from 'react-router-dom';
+import {toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Login() {
   const navigate = useNavigate()
@@ -33,6 +35,12 @@ function Login() {
     password_confirmation
   }
 
+  const showToastMessage = () => {
+    toast.success(`Hello, ${username}.`, {
+        position: toast.POSITION.TOP_RIGHT,
+    });
+};
+
   function handleSubmit(e) {
     e.preventDefault()
     setIsLoading(true)
@@ -46,6 +54,7 @@ function Login() {
     .then((r) => {
       setIsLoading(false)
       if (r.ok) {
+        showToastMessage()
         r.json().then((admin) => setAdmin(admin))
         navigate("/plants")
       } else {

@@ -1,7 +1,8 @@
 import {useContext, useState} from 'react'
-import { AdminContext } from '../AdminContext'
 import { useNavigate } from 'react-router-dom'
 import { SpeciesContext } from '../SpeciesContext'
+import {toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function PlantForm() {
@@ -27,6 +28,12 @@ function PlantForm() {
         light,
         moisture
     } = inputState
+
+    const showToastMessage = () => {
+        toast.success(`${common_name} added!`, {
+            position: toast.POSITION.TOP_RIGHT,
+        });
+    };
 
     function onInputChange(e) {
         setInputState({
@@ -56,6 +63,7 @@ function PlantForm() {
         .then((r) => {
             if (r.ok) {
                 setIsLoading(false)
+                showToastMessage()
                 r.json().then((plant) => setAllPlants([...allPlants, plant]))
                 navigate("/plants")
             } else {

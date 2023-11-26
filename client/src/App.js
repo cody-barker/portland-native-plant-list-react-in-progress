@@ -8,6 +8,7 @@ import { SearchProvider } from './SearchContext'
 import Footer from './components/Footer'
 import Login from './pages/Login'
 import { AdminProvider } from './AdminContext'
+import { ToastContainer} from 'react-toastify';
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
     <SearchProvider>
       <AdminProvider>
           <NavBar />
+          <ToastContainer />
           <Routes>
             <Route path="/" element={<Home />}/>
             <Route path="/plants" element={<AllPlants />}/>
