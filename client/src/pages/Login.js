@@ -70,7 +70,7 @@ function Login() {
         <input className="login-input" onChange={onInputChange} name="username" type="text" value={username} placeholder="Username"></input>
         <input className="login-input" onChange={onInputChange} name="password"type="password" value={password} placeholder="Password"></input>
         <input className="login-input" onChange={onInputChange} name="password_confirmation" type="password" value={password_confirmation} placeholder="Confirm Password"></input>
-        <button type="submit">{isLoading? "..." : "Submit"}</button>
+        <button type="submit">{isLoading? "Loading" : "Submit"}</button>
       </form>
       {errors.map((error, index) => (
         <p key={index} className="error-message">{error}</p>

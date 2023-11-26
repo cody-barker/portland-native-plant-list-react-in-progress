@@ -82,7 +82,7 @@ function PlantForm() {
                 <input  onChange={onInputChange} type="number" step="0.5" name="height" placeholder="Height (ft)" value={height}></input>
                 <input  onChange={onInputChange} type="text" name="light" placeholder="Light Requirement" value={light}></input>
                 <input  onChange={onInputChange} type="text" name="moisture" placeholder="Moisture Requirement" value={moisture}></input>
-                <button type="submit">{isLoading ? "..." : "Submit"}</button>
+                <button type="submit">{isLoading ? "Loading" : "Submit"}</button>
             </form>
             {errors.map((error, index) => (
                 <p key={index} className="error-message">{error}</p>
