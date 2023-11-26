@@ -12,7 +12,7 @@ function Plant({plant}) {
     } = plant
 
     return(
-        <tr>
+        <tr className="table-row">
             <td id="latin">
                 <NavLink to={`/plants/${id}`}>
                     {binomial_name}
