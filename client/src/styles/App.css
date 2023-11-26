@@ -19,16 +19,14 @@ body {
 }
 
 #navbar {
+  width: 100%;
   max-width: 1520px;
   max-height: 10vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  justify-items: stretch;
-  flex: 1;
-  padding-left: 40%;
-  padding-right: 40%;
   background-color: #004d40;
+  margin: 0 auto;
 }
 
 nav a{
@@ -230,4 +228,13 @@ th svg.desc {
 
 .error-message {
   color: red
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    margin: 0 auto;
 }

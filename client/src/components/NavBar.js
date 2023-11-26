@@ -20,8 +20,8 @@ function NavBar() {
         <nav id="navbar">
             <NavLink to="/">Home</NavLink>
             <NavLink to="/plants">Plants</NavLink>
+            {admin ? <NavLink to="/plants/new">Add Species</NavLink> : null}
             {admin ? <NavLink onClick={handleLogout} to="/">Logout</NavLink> : <NavLink to="/login">Login</NavLink>}
-            
         </nav>
     )
 }
