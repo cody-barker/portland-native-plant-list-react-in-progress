@@ -76,16 +76,16 @@ function PlantForm() {
         <div className="form-container">
             <form autoComplete="off" onSubmit={handleSubmit}>
                 <h3>Submit a New Species to the List</h3>
-                <input required onChange={onInputChange} type="text" name="binomial_name" placeholder="Binomial Name" value={binomial_name}></input>
-                <input required onChange={onInputChange} type="text" name="common_name" placeholder="A Common Name" value={common_name}></input>
-                <input required onChange={onInputChange} type="text" name="species_type" placeholder="Type" value={species_type}></input>
-                <input required onChange={onInputChange} type="number" step="0.5" min="0.5" max="380" name="height" placeholder="Height (ft)" value={height}></input>
-                <input required onChange={onInputChange} type="text" name="light" placeholder="Light Requirement" value={light}></input>
-                <input required onChange={onInputChange} type="text" name="moisture" placeholder="Moisture Requirement" value={moisture}></input>
+                <input  onChange={onInputChange} type="text" name="binomial_name" placeholder="Binomial Name" value={binomial_name}></input>
+                <input  onChange={onInputChange} type="text" name="common_name" placeholder="A Common Name" value={common_name}></input>
+                <input  onChange={onInputChange} type="text" name="species_type" placeholder="Type" value={species_type}></input>
+                <input  onChange={onInputChange} type="number" step="0.5" name="height" placeholder="Height (ft)" value={height}></input>
+                <input  onChange={onInputChange} type="text" name="light" placeholder="Light Requirement" value={light}></input>
+                <input  onChange={onInputChange} type="text" name="moisture" placeholder="Moisture Requirement" value={moisture}></input>
                 <button type="submit">{isLoading ? "Loading" : "Submit"}</button>
             </form>
-            {errors.map((error) => (
-                <p className="error-message">{error}</p>
+            {errors.map((error, index) => (
+                <p key={index} className="error-message">{error}</p>
             ))}
         </div>
     )

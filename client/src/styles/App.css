@@ -227,7 +227,8 @@ th svg.desc {
 }
 
 .error-message {
-  color: red
+  color: red;
+  margin: 4px;
 }
 
 .form-container {
