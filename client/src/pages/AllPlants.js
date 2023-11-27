@@ -74,10 +74,21 @@ function AllPlants() {
   }
 
   function getSortedArray(arrayToSort) {
-    if (sort.direction === 'asc') {
-      return arrayToSort.sort((a, b) => a[sort.keyToSort].localeCompare(b[sort.keyToSort], undefined, { sensitivity: 'base' }));
-    }
-    return arrayToSort.sort((a, b) => b[sort.keyToSort].localeCompare(a[sort.keyToSort], undefined, { sensitivity: 'base' }));
+    return arrayToSort.sort((a, b) => {
+      const valueA = a[sort.keyToSort];
+      const valueB = b[sort.keyToSort];
+  
+      if (typeof valueA === 'string') {
+        return sort.direction === 'asc'
+          ? valueA.localeCompare(valueB, undefined, { sensitivity: 'base' })
+          : valueB.localeCompare(valueA, undefined, { sensitivity: 'base' });
+      } else if (typeof valueA === 'number') {
+        return sort.direction === 'asc' ? valueA - valueB : valueB - valueA;
+      } else {
+        // Handle other types as needed
+        return 0;
+      }
+    });
   }
 
   return (
