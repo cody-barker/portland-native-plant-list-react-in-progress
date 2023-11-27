@@ -32,7 +32,6 @@ body {
 nav a{
   display: flex;
   padding: 16px 8px;
-  font-size: 0.8rem;
   text-decoration: none;
   color: #ffffff;
   text-transform: uppercase;
