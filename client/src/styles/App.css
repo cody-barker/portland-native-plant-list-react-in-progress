@@ -280,7 +280,7 @@ th svg.desc {
 .edit-button {
   color: white;
   text-decoration: none;
-  padding: 4px;
+  padding: 0px 6px 0px 6px;
 }
 
 .edit-button:visited {
@@ -294,7 +294,7 @@ th svg.desc {
 .delete-button {
   color: #ffffff;
   text-decoration: none;
-  padding: 4px;
+  padding: 0px 6px 0px 6px;
 }
 
 .delete-button:visited {
