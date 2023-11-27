@@ -1,8 +1,5 @@
 class AdminsController < ApplicationController
-
-  def index
-      render json: Admin.all
-  end
+  before_action :authorize
 
   def show
       admin = Admin.find_by(id: session[:admin_id])

@@ -65,7 +65,7 @@ function Login() {
 
   return(
     <div className="login-container">
-      <p className="dark-green">Login for Admins Only</p>
+      <h3 className="dark-green">Login for Admins Only</h3>
       <form onSubmit={handleSubmit}>
         <input className="login-input" onChange={onInputChange} name="username" type="text" value={username} placeholder="Username"></input>
         <input className="login-input" onChange={onInputChange} name="password"type="password" value={password} placeholder="Password"></input>

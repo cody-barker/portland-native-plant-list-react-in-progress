@@ -26,7 +26,12 @@ function App() {
             <Route path="/plants/:id/edit" element={<UpdatePlantForm />}/>
             <Route path="/login" element={<Login />}/>
             <Route path="/plants/new" element={<PlantForm />}/>
-            <Route path="*" element={<h1>404 Not Found - Please Return to the Home Page</h1>}/>
+            <Route path="*" element={
+              <div className="vh85">
+                <h2 className="dark-green">404 Error - Page Not Found</h2>
+                <h3 className="dark-green"> Please Return to the Home Page</h3>
+              </div>
+              }/>
           </Routes>
           <Footer />
         </AdminProvider>

@@ -9,7 +9,7 @@
 body {
   font-family: 'DM Sans', sans-serif;
   min-height: 100vh;
-  max-width: 100vw;
+  max-width: 100%;
   margin: 0;
   font-size: 16px;
   background-color: #ffffff;
@@ -44,7 +44,7 @@ a:hover {
 
 header {
   background-color: #004d40;
-  height: 80vh;
+  height: 85vh;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -64,7 +64,7 @@ header h3 {
 
 footer {
   background-color:#ffffff;
-  min-height: 10vh;
+  min-height: 5vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -223,6 +223,7 @@ th svg.desc {
   flex-direction: column;
   width: 50%;
   margin: 0 auto;
+  min-height: 85vh;
 }
 
 .login-input {
@@ -246,14 +247,16 @@ th svg.desc {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 50%;
+    width: 60%;
+    padding: 10px;
     margin: 0 auto;
+    min-height: 85vh;
 }
 
 .plant-detail-container {
   background-color:#004d40;
   color: #ffffff;
-  min-height: 85vh;
+  min-height: 87vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -300,4 +303,13 @@ th svg.desc {
 
 .delete-button:hover {
   color: red;
+}
+
+.vh85 {
+  height: 85vh;
+  padding: 25px;
+}
+
+h3 {
+  color:#004d40
 }

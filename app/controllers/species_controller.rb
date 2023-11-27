@@ -35,11 +35,6 @@ class SpeciesController < ApplicationController
     Species.find(params[:id])
   end
 
-  def authorize
-    admin = Admin.find_by(id: session[:admin_id])
-    render json: {errors: ["Not authorized."]}, status: :unauthorized unless admin
-  end
-
   def species_params
     params.permit(
       :binomial_name,
