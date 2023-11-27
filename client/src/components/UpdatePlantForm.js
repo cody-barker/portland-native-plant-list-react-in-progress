@@ -213,7 +213,7 @@ function UpdatePlantForm() {
   return (
     <div className="form-container">
       <form autoComplete="off" onSubmit={handleSubmit}>
-              <h3>Submit a New Species to the List</h3>
+              <h3>Edit Species Details</h3>
               <input  onChange={onInputChange} type="text" name="binomial_name" placeholder="Binomial Name" value={binomial_name}></input>
               <input  onChange={onInputChange} type="text" name="common_name" placeholder="A Common Name" value={common_name}></input>
               <input  onChange={onInputChange} type="text" name="species_type" placeholder="Type" value={species_type}></input>
