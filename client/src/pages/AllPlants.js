@@ -3,11 +3,9 @@ import Plant from '../components/Plant';
 import Search from '../components/Search';
 import { SearchContext } from '../SearchContext';
 import { SpeciesContext } from '../SpeciesContext';
-import { AdminContext } from '../AdminContext.js';
 import Caret from '../icons/Caret.jsx'
 
 function AllPlants() {
-  const {admin} = useContext(AdminContext)
   const {
     biSearch,
     comSearch,
@@ -27,10 +25,6 @@ function AllPlants() {
   ));
 
   let plantComps = filteredPlants.map((plant) => <Plant plant={plant} key={plant.id} />);
- 
-  function changeType(e) {
-    setType(e.target.value);
-  }
 
   const headers = [
     {
@@ -55,16 +49,20 @@ function AllPlants() {
     },
     {
       id: 5,
-      KEY: "moistureRequirement",
+      KEY: "moisture",
       LABEL: "Moisture"
     },
     {
       id: 6,
-      KEY: "lightRequirement",
+      KEY: "light",
       LABEL: "Light"
     }
   ]
-  
+
+  function changeType(e) {
+    setType(e.target.value);
+  }
+
   const types = ["Tree", "Shrub", "Grass", "Herb"]
   
   function handleHeaderClick(header) {
@@ -77,9 +75,9 @@ function AllPlants() {
 
   function getSortedArray(arrayToSort) {
     if (sort.direction === 'asc') {
-      return arrayToSort.sort((a, b) => (a[sort.keyToSort] > b[sort.keyToSort] ? 1 : -1))
+      return arrayToSort.sort((a, b) => a[sort.keyToSort].localeCompare(b[sort.keyToSort], undefined, { sensitivity: 'base' }));
     }
-    return arrayToSort.sort((a, b) => (a[sort.keyToSort] > b[sort.keyToSort] ? -1 : 1))
+    return arrayToSort.sort((a, b) => b[sort.keyToSort].localeCompare(a[sort.keyToSort], undefined, { sensitivity: 'base' }));
   }
 
   return (
