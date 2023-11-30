@@ -5,9 +5,11 @@
 Portland Native Plants is an expansive resource containing plants native to Portland, Oregon.\
 All of the plants on this list could be suitable for backyard habitats and restoration projects alike.<br>
 The site allows you to:<br>
+
 - search and filter plants by binomial name, common name, and type.
 - sort columns alphanumerically\
 - modify the database with full CRUD if a contributing admin
+<br>
 
 <img src="public/portland_native_plants_preview.gif" alt="gif preview"/>
 
