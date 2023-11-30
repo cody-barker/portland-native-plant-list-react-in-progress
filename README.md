@@ -24,10 +24,10 @@ Open [http://localhost:3000/species](http://localhost:3000/species) to view it i
 Runs the client in development mode.\
 Open [http://localhost:4000](http://localhost:4000) to view it in your browser.
 
-The page will reload when you make changes.\
+The page will reload when you make changes.
 
 ## For Contributors
-If you'd like to contribute to the database, please email me at codybarker.or@gmail.com We need images!
+If you'd like to contribute to the database, please email me at codybarker.or@gmail.com. We need images!
 
 ##  Support
 e: codybarker.or@gmail.com
