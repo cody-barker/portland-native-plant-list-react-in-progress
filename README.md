@@ -7,7 +7,7 @@ All of the plants on this list could be suitable for backyard habitats and resto
 The site allows you to:<br>
 
 - search and filter plants by binomial name, common name, and type.
-- sort columns alphanumerically\
+- sort columns alphanumerically
 - modify the database with full CRUD if a contributing admin
 <br>
 
