@@ -110,7 +110,7 @@ function AllPlants() {
         </div>
       </div>
       <table>
-        <thead>
+        <thead className="table-header-row">
           <tr>
            {headers.map((header, index) => (
             <th key={index} onClick={() => handleHeaderClick(header)}>

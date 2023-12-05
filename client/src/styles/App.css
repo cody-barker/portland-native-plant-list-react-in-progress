@@ -183,6 +183,12 @@ table tr, td, th{
   color:rgb(30, 0, 255);
 }
 
+.table-header-row {
+  position: sticky;
+  top: 0;
+  background-color: white;
+}
+
 th { 
   user-select: none;
   cursor: pointer;
