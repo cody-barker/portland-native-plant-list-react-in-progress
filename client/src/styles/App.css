@@ -20,7 +20,6 @@ body {
 
 #navbar {
   width: 100%;
-  max-width: 1520px;
   max-height: 10vh;
   display: flex;
   justify-content: center;
