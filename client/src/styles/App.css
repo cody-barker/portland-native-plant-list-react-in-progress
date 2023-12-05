@@ -105,6 +105,7 @@ select {
   border-radius: 20px;
   padding: 4px;
   color: black;
+  margin-top: 1em;
 }
 
 option {
