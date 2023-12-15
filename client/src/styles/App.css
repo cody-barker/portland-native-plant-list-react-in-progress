@@ -103,12 +103,12 @@ select {
   box-shadow: 0 0 7px rgba(45, 59, 38, 0.3);
   border-radius: 20px;
   padding: 4px;
-  color: black;
+  color: #333;
   margin-top: 1em;
 }
 
 option {
-  color: black;
+  color: #333;
 }
 
 form {
@@ -167,15 +167,15 @@ table {
 }
 
 table tr, td, th{
-  border: 1px solid black;
-  color: black;
-  padding: 3px;
+  border: 1px solid #333;
+  color: #333;
+  padding: 2px;
   word-wrap: break-word;
 }
 
 .table-row a {
   text-decoration: none;
-  color: black;
+  color: #333;
 }
 
 .table-row a:hover {
@@ -275,9 +275,9 @@ th svg.desc {
 }
 
 .plant-details {
-  width: 50%;
+  max-width: 25%;
   margin: 0 auto;
-  padding: 5%;
+  padding: 2%;
   border: 1px solid white;
   border-radius: 5px;
 }
