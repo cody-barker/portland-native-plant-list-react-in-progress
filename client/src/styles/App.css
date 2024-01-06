@@ -154,7 +154,9 @@ button[type=submit]:hover {
 }
 
 .table-container {
+  margin: 0 auto;
   min-height: 85vh;
+  max-width: 1200px;
 }
 
 table {
