@@ -154,6 +154,7 @@ button[type=submit]:hover {
 
 .main-container {
   min-height: 100svh;
+  max-width: 1200px;
 }
 
 table {
