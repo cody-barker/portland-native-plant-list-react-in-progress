@@ -92,7 +92,7 @@ function AllPlants() {
   }
 
   return (
-    <div className="table-container">
+    <div className="main-container">
       <div className="filters-container">
         <Search
           handleBiNameSearchState={handleBiNameSearchState}

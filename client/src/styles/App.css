@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,200;9..40,400&display=swap');
 
-@media only screen and (max-width: 600px) {
+@media (max-width: 600px) {
   table, th, tr, td {
     font-size: 10px;
   }
@@ -11,7 +11,6 @@ body {
   min-height: 100vh;
   max-width: 100%;
   margin: 0;
-  font-size: 16px;
   background-color: #ffffff;
   letter-spacing: 0.075em;
   color: #ffffff;
@@ -42,7 +41,7 @@ a:hover {
 
 header {
   background-color: #004d40;
-  height: 85vh;
+  height: 100svh;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -153,8 +152,8 @@ button[type=submit]:hover {
   cursor: pointer;
 }
 
-.table-container {
-  min-height: 85vh;
+.main-container {
+  min-height: 100svh;
 }
 
 table {

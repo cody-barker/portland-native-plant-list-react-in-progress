@@ -17,26 +17,29 @@ function App() {
   return (
     <SearchProvider>
       <AdminProvider>
-          <NavBar />
-          <ToastContainer />
-          <Routes>
-            <Route path="/" element={<Home />}/>
-            <Route path="/plants" element={<AllPlants />}/>
-            <Route path="/plants/:id" element={<PlantDetail />}/>
-            <Route path="/plants/:id/edit" element={<UpdatePlantForm />}/>
-            <Route path="/login" element={<Login />}/>
-            <Route path="/plants/new" element={<PlantForm />}/>
-            <Route path="*" element={
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/plants" element={<AllPlants />} />
+          <Route path="/plants/:id" element={<PlantDetail />} />
+          <Route path="/plants/:id/edit" element={<UpdatePlantForm />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/plants/new" element={<PlantForm />} />
+          <Route
+            path="*"
+            element={
               <div className="vh85">
                 <h2 className="dark-green">404 Error - Page Not Found</h2>
                 <h3 className="dark-green"> Please Return to the Home Page</h3>
               </div>
-              }/>
-          </Routes>
-          <Footer />
-        </AdminProvider>
+            }
+          />
+        </Routes>
+        <Footer />
+        <ToastContainer />
+      </AdminProvider>
     </SearchProvider>
-  )
+  );
 }
 
 export default App;
