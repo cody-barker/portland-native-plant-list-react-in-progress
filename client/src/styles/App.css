@@ -278,7 +278,7 @@ th svg.desc {
   width: 60%;
   padding: 10px;
   margin: 0 auto;
-  min-height: 85vh;
+  min-height: 100svh;
 }
 
 .plant-detail-container {
