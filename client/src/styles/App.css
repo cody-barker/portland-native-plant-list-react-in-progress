@@ -66,11 +66,7 @@ header h3 {
 
 footer {
   background-color: #ffffff;
-  min-height: 5vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
+  padding: 2em;
 }
 
 footer a {
@@ -83,6 +79,15 @@ footer a {
 footer a:hover {
   transform: scale(1.1);
   color: #004d40;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .filters-container {
@@ -317,15 +322,13 @@ th svg.desc {
   color: red;
 }
 
-/* .vh85 {
-  height: 85vh;
-  padding: 25px;
-} */
-
 h3 {
   color: #004d40;
 }
 
 .white {
   color: white;
+}
+.green {
+  color: #004d40;
 }
