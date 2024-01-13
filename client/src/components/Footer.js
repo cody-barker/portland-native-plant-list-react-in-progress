@@ -5,7 +5,7 @@ function Footer() {
   return (
     <footer>
       <div className="container">
-        <div className="footer__content green">Portland Native Plants</div>
+        <h1 className="footer__content green h1--small">Portland Native Plants</h1>
         <div className="footer__links">
           <a
             target="_blank"
