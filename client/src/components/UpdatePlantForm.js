@@ -33,7 +33,7 @@ function UpdatePlantForm() {
     binomial_name: "",
     common_name: "",
     species_type: "",
-    height: 0,
+    height: "",
     light: "",
     moisture: "",
   });

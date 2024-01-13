@@ -54,7 +54,7 @@ function AllPlants() {
     {
       id: 4,
       KEY: "height",
-      LABEL: "Max Height (ft)",
+      LABEL: "Height (ft)",
     },
     {
       id: 5,
