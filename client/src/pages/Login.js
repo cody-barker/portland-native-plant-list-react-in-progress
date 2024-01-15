@@ -9,11 +9,10 @@ function Login() {
   const { setAdmin } = useContext(AdminContext);
   const [inputState, setInputState] = useState({
     username: "",
-    password: "",
-    password_confirmation: "",
+    password: ""
   });
 
-  const { username, password, password_confirmation } = inputState;
+  const { username, password } = inputState;
 
   const onInputChange = (e) => {
     setInputState({
@@ -27,8 +26,7 @@ function Login() {
 
   const formData = {
     username,
-    password,
-    password_confirmation,
+    password
   };
 
   const showToastMessage = () => {
@@ -77,14 +75,6 @@ function Login() {
           type="password"
           value={password}
           placeholder="Password"
-        ></input>
-        <input
-          className="login-input"
-          onChange={onInputChange}
-          name="password_confirmation"
-          type="password"
-          value={password_confirmation}
-          placeholder="Confirm Password"
         ></input>
         <button type="submit">{isLoading ? "Loading" : "Submit"}</button>
       </form>
