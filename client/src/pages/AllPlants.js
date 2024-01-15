@@ -72,7 +72,7 @@ function AllPlants() {
     setType(e.target.value);
   }
 
-  const types = ["Tree", "Shrub", "Grass", "Herb"];
+  const types = ["Tree", "Shrub", "Grass", "Herb", "Fern", "Sedge", "Rush"];
 
   function handleHeaderClick(header) {
     setSort({
