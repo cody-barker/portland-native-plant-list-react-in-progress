@@ -9,7 +9,7 @@ function Login() {
   const { setAdmin } = useContext(AdminContext);
   const [inputState, setInputState] = useState({
     username: "",
-    password: ""
+    password: "",
   });
 
   const { username, password } = inputState;
@@ -26,7 +26,7 @@ function Login() {
 
   const formData = {
     username,
-    password
+    password,
   };
 
   const showToastMessage = () => {
