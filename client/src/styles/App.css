@@ -122,7 +122,6 @@ footer a:hover {
 
 select {
   background-color: #ffffff;
-  color: #0f3138;
   box-shadow: 0 0 7px rgba(45, 59, 38, 0.3);
   border-radius: 20px;
   padding: 4px;
@@ -201,6 +200,11 @@ th {
   word-wrap: break-word;
 }
 
+th:hover {
+  background-color: #004d40;
+  color: white;
+}
+
 .table-row a {
   text-decoration: none;
   color: #333;
@@ -208,7 +212,6 @@ th {
 
 .table-row a:hover {
   text-decoration: none;
-  color: rgb(30, 0, 255);
 }
 
 .table-header-row {
@@ -243,6 +246,15 @@ th svg.desc {
 
 #latin {
   font-style: italic;
+}
+
+#latin:hover{
+  background-color:#004d40;
+  cursor: pointer;
+}
+
+#latin:hover a {
+  color: white;
 }
 
 .dark-green {
