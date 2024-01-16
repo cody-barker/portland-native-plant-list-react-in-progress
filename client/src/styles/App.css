@@ -312,7 +312,7 @@ th svg.desc {
 }
 
 .plant-details {
-  max-width: 25%;
+  min-width: 200px;
   margin: 0 auto;
   padding: 2%;
   border: 1px solid white;
