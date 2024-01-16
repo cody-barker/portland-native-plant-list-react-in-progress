@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 function Plant({ plant }) {
   const {
@@ -11,10 +11,12 @@ function Plant({ plant }) {
     light,
   } = plant;
 
+  const navigate = useNavigate();
+
   return (
     <tr className="table-row">
-      <td id="latin">
-        <NavLink to={`/plants/${id}`}>{binomial_name}</NavLink>
+      <td id="latin" onClick={() => navigate(`/plants/${id}`)}>
+        {binomial_name}
       </td>
       <td>{common_name}</td>
       <td>{species_type}</td>

@@ -250,11 +250,8 @@ th svg.desc {
 
 #latin:hover{
   background-color:#004d40;
-  cursor: pointer;
-}
-
-#latin:hover a {
   color: white;
+  cursor: pointer;
 }
 
 .dark-green {
