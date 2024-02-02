@@ -17,6 +17,11 @@
       "type": "image/png",
       "sizes": "196x196",
       "purpose": "maskable"
+    },
+    {
+      "src": "pnp_icon_512px.png",
+      "sizes": "512x512",
+      "type": "image/png"
     }
   ],
   "start_url": ".",
