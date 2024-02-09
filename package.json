@@ -11,6 +11,7 @@
     "heroku-postbuild": "npm run clean && npm run build && npm run deploy"
   },
   "dependencies": {
+    "react-ga": "^3.3.1",
     "typeface-cardo": "^1.1.13"
   }
 }

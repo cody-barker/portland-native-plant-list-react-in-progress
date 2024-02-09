@@ -11,8 +11,13 @@ import { AdminProvider } from './AdminContext'
 import { ToastContainer} from 'react-toastify';
 import PlantDetail from './pages/PlantDetail'
 import UpdatePlantForm from './components/UpdatePlantForm'
+import ReactGA from "react-ga"
+import React from 'react';
 
 function App() {
+
+  const TRACKING_ID = "G-2DW60JMQR5";
+  ReactGA.initialize(TRACKING_ID);
 
   return (
     <SearchProvider>
