@@ -1,5 +1,5 @@
 import "./styles/App.css";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
 import AllPlants from "./pages/AllPlants";
@@ -17,10 +17,11 @@ import React, { useEffect } from "react";
 function App() {
   const TRACKING_ID = "G-2DW60JMQR5";
   ReactGA.initialize(TRACKING_ID);
+  const location = useLocation();
 
   useEffect(() => {
-    ReactGA.pageview(window.location.pathname);
-  }, []);
+    ReactGA.pageview(location.pathname + location.search);
+  }, [location]);
 
   return (
     <SearchProvider>
