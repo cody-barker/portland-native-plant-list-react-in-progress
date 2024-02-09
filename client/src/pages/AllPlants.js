@@ -4,6 +4,7 @@ import Search from "../components/Search";
 import { SearchContext } from "../SearchContext";
 import { SpeciesContext } from "../SpeciesContext";
 import Caret from "../icons/Caret.jsx";
+import ReactGA from "react-ga";
 
 function AllPlants() {
   const {
@@ -12,6 +13,10 @@ function AllPlants() {
     handleBiNameSearchState,
     handleComNameSearchState,
   } = useContext(SearchContext);
+
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname);
+  });
 
   const { allPlants } = useContext(SpeciesContext);
   const [sort, setSort] = useState({
@@ -72,7 +77,16 @@ function AllPlants() {
     setType(e.target.value);
   }
 
-  const types = ["Tree", "Shrub", "Grass", "Herb", "Fern", "Sedge", "Rush", "Vine"];
+  const types = [
+    "Tree",
+    "Shrub",
+    "Grass",
+    "Herb",
+    "Fern",
+    "Sedge",
+    "Rush",
+    "Vine",
+  ];
 
   function handleHeaderClick(header) {
     setSort({

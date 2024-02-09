@@ -4,8 +4,13 @@ import { SpeciesContext } from "../SpeciesContext";
 import { AdminContext } from "../AdminContext";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import ReactGA from "react-ga";
 
 function PlantDetail() {
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname);
+  });
+
   let { id } = useParams();
   id = parseInt(id);
   const navigate = useNavigate();

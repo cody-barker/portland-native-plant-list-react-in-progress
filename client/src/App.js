@@ -12,12 +12,16 @@ import { ToastContainer} from 'react-toastify';
 import PlantDetail from './pages/PlantDetail'
 import UpdatePlantForm from './components/UpdatePlantForm'
 import ReactGA from "react-ga"
-import React from 'react';
+import React, { useEffect } from 'react';
 
 function App() {
 
   const TRACKING_ID = "G-2DW60JMQR5";
   ReactGA.initialize(TRACKING_ID);
+
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname)
+  })
 
   return (
     <SearchProvider>
