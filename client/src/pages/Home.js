@@ -1,4 +1,9 @@
 import React from "react";
+import ReactGA from 'react-ga'
+
+ useEffect(() => {
+   ReactGA.pageview(window.location.pathname);
+ });
 
 function Home() {
   return (
