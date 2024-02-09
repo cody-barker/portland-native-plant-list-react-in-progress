@@ -1,11 +1,12 @@
-import React from "react";
-import ReactGA from 'react-ga'
-
- useEffect(() => {
-   ReactGA.pageview(window.location.pathname);
- });
+import React, { useEffect } from "react";
+import ReactGA from "react-ga";
 
 function Home() {
+
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname);
+  });
+  
   return (
     <header>
       <h1>PORTLAND NATIVE PLANTS</h1>

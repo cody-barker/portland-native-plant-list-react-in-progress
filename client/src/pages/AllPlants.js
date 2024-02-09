@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import Plant from "../components/Plant";
 import Search from "../components/Search";
 import { SearchContext } from "../SearchContext";

@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { useParams, NavLink, useNavigate } from "react-router-dom";
 import { SpeciesContext } from "../SpeciesContext";
 import { AdminContext } from "../AdminContext";
