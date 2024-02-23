@@ -119,8 +119,7 @@ function UpdatePlantForm() {
         ></input>
         <input
           onChange={onInputChange}
-          type="number"
-          step="0.5"
+          type="text"
           name="height"
           placeholder="Height (ft)"
           value={height}
