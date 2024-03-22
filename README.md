@@ -9,6 +9,22 @@ The site allows you to:<br>
 - search and filter plants by binomial name, common name, and type.
 - sort columns alphanumerically
 - modify the database with full CRUD if a contributing admin
+- download and install the app on your desktop or mobile device as a Progressive Web App
+
+### Installing the App
+
+#### Chrome - Desktop
+
+In the address bar, click the icon of a desktop with a down arrow to install the app. This will create an icon on your desktop.
+
+#### Chrome - Mobile
+
+Click the options menu and select Install App to add it as an icon on your home page.
+
+#### iOS
+
+Choose the Share up-arrow at the bottom of the screen, and select Add to Home Screen.
+
 <br>
 
 <img src="public/portland_native_plants_preview.gif" alt="gif preview"/>
