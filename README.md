@@ -19,9 +19,9 @@ In the project directory, you can run:
 
 ### Backend
 
-### `bundle install`
+#### `bundle install`
 
-### `rails s`
+#### `rails s`
 
 Runs a local server to host the plant list data.\
 Open [http://localhost:3000/species](http://localhost:3000/species) to view it in your browser.
