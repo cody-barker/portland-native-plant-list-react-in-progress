@@ -18,12 +18,18 @@ The site allows you to:<br>
 In the project directory, you can run:
 
 ### Backend
+
+### `bundle install`
+
 ### `rails s`
 
 Runs a local server to host the plant list data.\
 Open [http://localhost:3000/species](http://localhost:3000/species) to view it in your browser.
 
 ### Frontend
+
+#### `npm install --prefix client`
+
 #### `npm start --prefix client`
 
 Runs the client in development mode.\
