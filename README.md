@@ -27,7 +27,7 @@ Choose the Share up-arrow at the bottom of the screen, and select Add to Home Sc
 
 <br>
 
-<img src="public/portland_native_plants_preview.gif" alt="gif preview"/>
+<img src="public/pnp_preview.gif" alt="gif preview"/>
 
 ## Available Scripts
 
