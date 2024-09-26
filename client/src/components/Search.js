@@ -1,25 +1,27 @@
 import React from "react";
 
-function Search({
-  biSearch,
-  comSearch,
-  handleBiNameSearchState,
-  handleComNameSearchState,
-}) {
+const SearchInput = ({ value, onChange, placeholder }) => (
+  <input
+    type="text"
+    placeholder={placeholder}
+    value={value}
+    onChange={onChange}
+  />
+);
+
+function Search({ biSearch, comSearch, handleSearchChange }) {
   return (
     <form>
-      <input
-        onChange={handleBiNameSearchState}
-        type="text"
-        placeholder="Search by Binomial Name"
+      <SearchInput
         value={biSearch}
-      ></input>
-      <input
-        onChange={handleComNameSearchState}
-        type="text"
-        placeholder="Search by Common Name"
+        onChange={(e) => handleSearchChange(e, "bi")}
+        placeholder="Search by Binomial Name"
+      />
+      <SearchInput
         value={comSearch}
-      ></input>
+        onChange={(e) => handleSearchChange(e, "com")}
+        placeholder="Search by Common Name"
+      />
     </form>
   );
 }
