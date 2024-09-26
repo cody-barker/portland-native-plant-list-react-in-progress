@@ -22,6 +22,9 @@
   }
 }
 
+#root {
+  height: 100vh;
+}
 
 body {
   font-family: "DM Sans", sans-serif;
@@ -248,8 +251,8 @@ th svg.desc {
   font-style: italic;
 }
 
-#latin:hover{
-  background-color:#004d40;
+#latin:hover {
+  background-color: #004d40;
   color: white;
   cursor: pointer;
 }
@@ -364,11 +367,10 @@ h3 {
 }
 
 .checkbox {
-  color:#004d40;
+  color: #004d40;
   display: flex;
 }
 
 .checkbox--input {
   width: 1em;
 }
-
