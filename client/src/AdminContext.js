@@ -1,24 +1,21 @@
-import { useState, createContext, useEffect } from 'react'
+import { useState, createContext, useEffect } from "react";
 
-const AdminContext = createContext()
+const AdminContext = createContext();
 
-function AdminProvider({children}) {
-  const [admin, setAdmin] = useState(null)
+function AdminProvider({ children }) {
+  const [admin, setAdmin] = useState(null);
 
   useEffect(() => {
-    fetch('/me')
-    .then((r) => {
-      if (r.ok) {
-        r.json().then((admin) => setAdmin(admin))
-      }
-    })
-  }, [])
+    fetch("/me")
+      .then((r) => r.json())
+      .then((admin) => setAdmin(admin));
+  }, []);
 
-  return(
-    <AdminContext.Provider value={{admin, setAdmin}}>
+  return (
+    <AdminContext.Provider value={{ admin, setAdmin }}>
       {children}
     </AdminContext.Provider>
-  )
+  );
 }
 
-export {AdminContext, AdminProvider}
+export { AdminContext, AdminProvider };

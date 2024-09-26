@@ -1,34 +1,34 @@
-import { useState, createContext } from 'react'
+import { useState, createContext } from "react";
 
-const SearchContext = createContext()
+const SearchContext = createContext();
 
-function SearchProvider({children}) {
+function SearchProvider({ children }) {
+  const [biSearch, setBiSearch] = useState("");
+  const [comSearch, setComSearch] = useState("");
 
-  const [biSearch, setBiSearch] = useState("")
-  const [comSearch, setComSearch] = useState("")
-
-  function handleBiNameSearchState(e) {
-    setBiSearch(e.target.value)
+  function handleSearchState(setSearch) {
+    return (e) => {
+      setSearch(e.target.value);
+    };
   }
 
-  function handleComNameSearchState(e) {
-    setComSearch(e.target.value)
-  }
-  
-  return(
-    <SearchContext.Provider value={
-      { 
+  const handleBiNameSearchState = handleSearchState(setBiSearch);
+  const handleComNameSearchState = handleSearchState(setComSearch);
+
+  return (
+    <SearchContext.Provider
+      value={{
         biSearch,
-        setBiSearch,
         comSearch,
+        setBiSearch,
         setComSearch,
         handleBiNameSearchState,
-        handleComNameSearchState
-        }
-      }>
+        handleComNameSearchState,
+      }}
+    >
       {children}
     </SearchContext.Provider>
-  )
+  );
 }
 
-export {SearchContext, SearchProvider}
+export { SearchContext, SearchProvider };
