@@ -1,22 +1,25 @@
-import { useState, useEffect, createContext } from 'react'
+import { useState, useEffect, createContext } from "react";
 
-const SpeciesContext = createContext()
+const SpeciesContext = createContext();
 
-function SpeciesProvider({children}) {
-  const [allPlants, setAllPlants] = useState([])
+function SpeciesProvider({ children }) {
   useEffect(() => {
-    fetch("/species")
-    .then((r) => r.json())
-    .then((species) => {
-      setAllPlants(species)
-    })
-  }, [])
+    fetchPlants();
+  }, []);
 
-  return(
-    <SpeciesContext.Provider value={{allPlants, setAllPlants}}>
+  const [allPlants, setAllPlants] = useState([]);
+  const fetchPlants = async () => {
+    const response = await fetch("/species");
+    const plants = await response.json();
+    console.log(plants);
+    setAllPlants(plants);
+  };
+
+  return (
+    <SpeciesContext.Provider value={{ allPlants, setAllPlants }}>
       {children}
     </SpeciesContext.Provider>
-  )
+  );
 }
 
-export {SpeciesContext, SpeciesProvider}
+export { SpeciesContext, SpeciesProvider };
