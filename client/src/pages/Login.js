@@ -7,54 +7,62 @@ import "react-toastify/dist/ReactToastify.css";
 function Login() {
   const navigate = useNavigate();
   const { setAdmin } = useContext(AdminContext);
-  const [inputState, setInputState] = useState({
+
+  const [state, setState] = useState({
     username: "",
     password: "",
+    isLoading: false,
+    errors: [],
   });
 
-  const { username, password } = inputState;
+  const { username, password, isLoading, errors } = state;
 
-  const onInputChange = (e) => {
-    setInputState({
-      ...inputState,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const [isLoading, setIsLoading] = useState(false);
-  const [errors, setErrors] = useState([]);
-
-  const formData = {
-    username,
-    password,
-  };
-
-  const showToastMessage = () => {
+  const showToastMessage = (username) => {
     toast.success(`Hello, ${username}.`, {
       position: toast.POSITION.TOP_RIGHT,
     });
   };
 
-  function handleSubmit(e) {
+  const onInputChange = ({ target: { name, value } }) => {
+    setState((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsLoading(true);
-    fetch("/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    }).then((r) => {
-      setIsLoading(false);
-      if (r.ok) {
-        showToastMessage();
-        r.json().then((admin) => setAdmin(admin));
+    setState((prevState) => ({ ...prevState, isLoading: true }));
+
+    try {
+      const response = await fetch("/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ username, password }),
+      });
+
+      setState((prevState) => ({ ...prevState, isLoading: false }));
+
+      if (response.ok) {
+        const admin = await response.json();
+        showToastMessage(username);
+        setAdmin(admin);
         navigate("/plants");
       } else {
-        r.json().then((error) => setErrors(error.errors));
+        const errorData = await response.json();
+        setState((prevState) => ({ ...prevState, errors: errorData.errors }));
       }
-    });
-  }
+    } catch (error) {
+      setState((prevState) => ({
+        ...prevState,
+        isLoading: false,
+        errors: ["An unexpected error occurred. Please try again."],
+      }));
+      console.error("Login error:", error);
+    }
+  };
 
   return (
     <div className="login-container">
@@ -67,7 +75,7 @@ function Login() {
           type="text"
           value={username}
           placeholder="Username"
-        ></input>
+        />
         <input
           className="login-input"
           onChange={onInputChange}
@@ -75,14 +83,17 @@ function Login() {
           type="password"
           value={password}
           placeholder="Password"
-        ></input>
-        <button type="submit">{isLoading ? "Loading" : "Submit"}</button>
+        />
+        <button type="submit" disabled={isLoading}>
+          {isLoading ? "Loading..." : "Submit"}
+        </button>
       </form>
-      {errors.map((error, index) => (
-        <p key={index} className="error-message">
-          {error}
-        </p>
-      ))}
+      {errors.length > 0 &&
+        errors.map((error, index) => (
+          <p key={index} className="error-message">
+            {error}
+          </p>
+        ))}
     </div>
   );
 }
