@@ -51,16 +51,16 @@ function PlantDetail() {
         <p>{height}'</p>
         <p>{moisture}</p>
         <p>{light}</p>
-        {admin ? (
-          <NavLink className="edit-button" to={`/plants/${id}/edit`}>
-            Edit
-          </NavLink>
-        ) : null}
-        {admin ? (
-          <NavLink className="delete-button" onClick={handleDelete}>
-            Delete
-          </NavLink>
-        ) : null}
+        {admin && (
+          <>
+            <NavLink className="edit-button" to={`/plants/${id}/edit`}>
+              Edit
+            </NavLink>
+            <button className="delete-button" onClick={handleDelete}>
+              Delete
+            </button>
+          </>
+        )}
       </div>
     </div>
   );
