@@ -21,6 +21,32 @@ function PlantForm() {
   const { binomial_name, common_name, species_type, height, light, moisture } =
     inputState;
 
+  const speciesOptions = [
+    "Tree",
+    "Shrub",
+    "Herb",
+    "Grass",
+    "Sedge",
+    "Rush",
+    "Vine",
+    "Aquatic",
+  ];
+
+  const lightOptions = [
+    "Full Sun",
+    "Full Sun to Partial Shade",
+    "Full Shade to Partial Shade",
+    "Shade",
+  ];
+
+  const moistureOptions = [
+    "Dry",
+    "Dry to Moist",
+    "Moist to Wet",
+    "Wet",
+    "Aquatic",
+  ];
+
   const showToastMessage = () => {
     toast.success(`${common_name} added!`, {
       position: toast.POSITION.TOP_RIGHT,
@@ -45,6 +71,7 @@ function PlantForm() {
 
   function handleSubmit(e) {
     e.preventDefault();
+    setIsLoading(true);
     fetch("/species", {
       method: "POST",
       headers: {
@@ -59,6 +86,7 @@ function PlantForm() {
         navigate("/plants");
       } else {
         r.json().then((error) => setErrors(error.errors));
+        setIsLoading(false);
       }
     });
   }
@@ -73,49 +101,72 @@ function PlantForm() {
           name="binomial_name"
           placeholder="Binomial Name"
           value={binomial_name}
-        ></input>
+        />
         <input
           onChange={onInputChange}
           type="text"
           name="common_name"
           placeholder="A Common Name"
           value={common_name}
-        ></input>
-        <input
-          onChange={onInputChange}
-          type="text"
+        />
+        <select
           name="species_type"
-          placeholder="Type"
+          className="edit-form__select"
           value={species_type}
-        ></input>
+          onChange={onInputChange}
+        >
+          <option value="">Select Species Type</option>
+          {speciesOptions.map((option, idx) => (
+            <option key={idx} value={option}>
+              {option}
+            </option>
+          ))}
+        </select>
         <input
           onChange={onInputChange}
           type="text"
           name="height"
           placeholder="Height (ft)"
           value={height}
-        ></input>
-        <input
-          onChange={onInputChange}
-          type="text"
+        />
+        <select
           name="light"
-          placeholder="Light Requirement"
+          className="edit-form__select"
           value={light}
-        ></input>
-        <input
           onChange={onInputChange}
-          type="text"
+        >
+          <option value="">Select Light Requirement</option>
+          {lightOptions.map((option, idx) => (
+            <option key={idx} value={option}>
+              {option}
+            </option>
+          ))}
+        </select>
+        <select
           name="moisture"
-          placeholder="Moisture Requirement"
+          className="edit-form__select"
           value={moisture}
-        ></input>
-        <button type="submit">{isLoading ? "Loading" : "Submit"}</button>
+          onChange={onInputChange}
+        >
+          <option value="">Select Moisture Requirement</option>
+          {moistureOptions.map((option, idx) => (
+            <option key={idx} value={option}>
+              {option}
+            </option>
+          ))}
+        </select>
+
+        <button type="submit" disabled={isLoading}>
+          {isLoading ? "Loading..." : "Submit"}
+        </button>
       </form>
-      {errors.map((error, index) => (
-        <p key={index} className="error-message">
-          {error}
-        </p>
-      ))}
+
+      {errors.length > 0 &&
+        errors.map((error, index) => (
+          <p key={index} className="error-message">
+            {error}
+          </p>
+        ))}
     </div>
   );
 }

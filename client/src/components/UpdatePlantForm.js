@@ -109,6 +109,14 @@ function UpdatePlantForm() {
     "Shade",
   ];
 
+  const moistureOptions = [
+    "Dry",
+    "Dry to Moist",
+    "Moist to Wet",
+    "Wet",
+    "Aquatic",
+  ];
+
   return (
     <div className="form-container">
       <form autoComplete="off" onSubmit={handleSubmit}>
@@ -160,13 +168,19 @@ function UpdatePlantForm() {
             </option>
           ))}
         </select>
-        <input
-          type="text"
+        <select
           name="moisture"
-          placeholder="Moisture Requirement"
+          className="edit-form__select"
           value={moisture}
           onChange={handleInputChange}
-        />
+        >
+          <option value="">Select Moisture Requirement</option>
+          {moistureOptions.map((option, idx) => (
+            <option key={idx} value={option}>
+              {option}
+            </option>
+          ))}
+        </select>
         <button type="submit" disabled={isLoading}>
           {isLoading ? "Loading..." : "Submit"}
         </button>
