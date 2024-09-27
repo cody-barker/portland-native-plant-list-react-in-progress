@@ -112,6 +112,7 @@ function UpdatePlantForm() {
   const moistureOptions = [
     "Dry",
     "Dry to Moist",
+    "Moist",
     "Moist to Wet",
     "Wet",
     "Aquatic",
