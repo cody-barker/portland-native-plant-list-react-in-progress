@@ -7,8 +7,10 @@ import "react-toastify/dist/ReactToastify.css";
 import ReactGA from "react-ga";
 
 function PlantDetail() {
+  const trackPageView = () => ReactGA.pageview(window.location.pathname);
+
   useEffect(() => {
-    ReactGA.pageview(window.location.pathname);
+    trackPageView();
   });
 
   let { id } = useParams();
@@ -17,31 +19,40 @@ function PlantDetail() {
   const { admin } = useContext(AdminContext);
   const { allPlants, setAllPlants } = useContext(SpeciesContext);
   const species = allPlants.find((species) => species.id === id);
+  const { binomial_name, common_name, height, moisture, light } = species;
+
   if (!species) {
     return <p>"Loading"</p>;
   }
-  const { binomial_name, common_name, height, moisture, light } = species;
-
-  const showToastMessage = () => {
-    toast.success(`${binomial_name} deleted.`, {
+  const showToastMessage = (species) => {
+    toast.success(`${species} deleted.`, {
       position: toast.POSITION.TOP_RIGHT,
     });
   };
 
-  function handleDelete() {
-    fetch(`/species/${id}`, {
+  const handleSuccessfulDelete = (deletedPlant) => {
+    const updatedPlants = allPlants.filter(
+      (plant) => plant.id !== deletedPlant.id
+    );
+    setAllPlants(updatedPlants);
+    showToastMessage(deletedPlant.binomial_name);
+    navigate("/plants");
+  };
+
+  const handleDeleteError = (error) => {
+    console.error("Error deleting species:", error);
+    toast.error("Failed to delete species. Please try again.");
+  };
+
+  const deleteSpecies = (speciesId) => {
+    return fetch(`/species/${speciesId}`, {
       method: "DELETE",
-    })
-      .then((r) => r.json())
-      .then((deletedPlant) => {
-        const updatedPlants = allPlants.filter(
-          (plant) => plant.id !== deletedPlant.id
-        );
-        setAllPlants(updatedPlants);
-        showToastMessage();
-        navigate("/plants");
-      });
-  }
+    }).then((response) => response.json());
+  };
+
+  const handleDelete = () => {
+    deleteSpecies(id).then(handleSuccessfulDelete).catch(handleDeleteError);
+  };
 
   return (
     <div className="plant-detail-container">
