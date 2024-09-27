@@ -374,3 +374,16 @@ h3 {
 .checkbox--input {
   width: 1em;
 }
+
+.edit-form__select {
+  margin-bottom: 0.5rem;
+  width: 100%;
+  border-radius: 0;
+  background-color: #004d40;
+  color: white;
+  padding: 0.5rem;
+}
+
+.edit-form__select option {
+  color: white;
+}

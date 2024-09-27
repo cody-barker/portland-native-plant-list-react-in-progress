@@ -56,9 +56,9 @@ function PlantDetail() {
             <NavLink className="edit-button" to={`/plants/${id}/edit`}>
               Edit
             </NavLink>
-            <button className="delete-button" onClick={handleDelete}>
+            <NavLink className="delete-button" onClick={handleDelete}>
               Delete
-            </button>
+            </NavLink>
           </>
         )}
       </div>
