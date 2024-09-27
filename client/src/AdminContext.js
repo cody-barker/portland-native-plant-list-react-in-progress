@@ -6,9 +6,11 @@ function AdminProvider({ children }) {
   const [admin, setAdmin] = useState(null);
 
   useEffect(() => {
-    fetch("/me")
-      .then((r) => r.json())
-      .then((admin) => setAdmin(admin));
+    fetch("/me").then((r) => {
+      if (r.ok) {
+        r.json().then((admin) => setAdmin(admin));
+      }
+    });
   }, []);
 
   return (

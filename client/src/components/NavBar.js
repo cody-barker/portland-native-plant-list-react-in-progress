@@ -4,6 +4,7 @@ import { AdminContext } from "../AdminContext";
 
 function NavBar() {
   const { admin, setAdmin } = useContext(AdminContext);
+  
   function handleLogout() {
     fetch("/logout", {
       method: "DELETE",
