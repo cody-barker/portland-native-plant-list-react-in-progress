@@ -7,25 +7,26 @@ import "react-toastify/dist/ReactToastify.css";
 import ReactGA from "react-ga";
 
 function PlantDetail() {
-  const trackPageView = () => ReactGA.pageview(window.location.pathname);
-
-  useEffect(() => {
-    trackPageView();
-  });
-
-  let { id } = useParams();
-  id = parseInt(id);
+  const { id } = useParams();
   const navigate = useNavigate();
   const { admin } = useContext(AdminContext);
   const { allPlants, setAllPlants } = useContext(SpeciesContext);
-  const species = allPlants.find((species) => species.id === id);
-  const { binomial_name, common_name, height, moisture, light } = species;
+
+  // Track page view using Google Analytics
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname);
+  }, []);
+
+  const species = allPlants.find((species) => species.id === parseInt(id));
 
   if (!species) {
-    return <p>"Loading"</p>;
+    return <p>Loading...</p>;
   }
-  const showToastMessage = (species) => {
-    toast.success(`${species} deleted.`, {
+
+  const { binomial_name, common_name, height, moisture, light } = species;
+
+  const showToastMessage = (speciesName) => {
+    toast.success(`${speciesName} deleted.`, {
       position: toast.POSITION.TOP_RIGHT,
     });
   };
@@ -45,13 +46,15 @@ function PlantDetail() {
   };
 
   const deleteSpecies = (speciesId) => {
-    return fetch(`/species/${speciesId}`, {
-      method: "DELETE",
-    }).then((response) => response.json());
+    return fetch(`/species/${speciesId}`, { method: "DELETE" }).then(
+      (response) => response.json()
+    );
   };
 
   const handleDelete = () => {
-    deleteSpecies(id).then(handleSuccessfulDelete).catch(handleDeleteError);
+    deleteSpecies(parseInt(id))
+      .then(handleSuccessfulDelete)
+      .catch(handleDeleteError);
   };
 
   return (
