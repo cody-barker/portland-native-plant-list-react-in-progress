@@ -7,7 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 import ReactGA from "react-ga";
 
 function PlantDetail() {
-  const { id } = useParams();
+  const id = parseInt(useParams().id);
   const navigate = useNavigate();
   const { admin } = useContext(AdminContext);
   const { allPlants, setAllPlants } = useContext(SpeciesContext);
@@ -17,7 +17,7 @@ function PlantDetail() {
     ReactGA.pageview(window.location.pathname);
   }, []);
 
-  const species = allPlants.find((species) => species.id === parseInt(id));
+  const species = allPlants.find((species) => species.id === id);
 
   if (!species) {
     return <p>Loading...</p>;
@@ -25,18 +25,16 @@ function PlantDetail() {
 
   const { binomial_name, common_name, height, moisture, light } = species;
 
-  const showToastMessage = (speciesName) => {
-    toast.success(`${speciesName} deleted.`, {
+  const showToastMessage = (binomial_name) => {
+    toast.success(`${binomial_name} deleted.`, {
       position: toast.POSITION.TOP_RIGHT,
     });
   };
 
-  const handleSuccessfulDelete = (deletedPlant) => {
-    const updatedPlants = allPlants.filter(
-      (plant) => plant.id !== deletedPlant.id
-    );
-    setAllPlants(updatedPlants);
-    showToastMessage(deletedPlant.binomial_name);
+  const handleSuccessfulDelete = () => {
+    const updatedPlantsArr = allPlants.filter((plant) => plant.id !== id);
+    setAllPlants(updatedPlantsArr);
+    showToastMessage(binomial_name);
     navigate("/plants");
   };
 
@@ -45,16 +43,12 @@ function PlantDetail() {
     toast.error("Failed to delete species. Please try again.");
   };
 
-  const deleteSpecies = (speciesId) => {
-    return fetch(`/species/${speciesId}`, { method: "DELETE" }).then(
-      (response) => response.json()
-    );
+  const deleteSpecies = () => {
+    return fetch(`/species/${id}`, { method: "DELETE" });
   };
 
   const handleDelete = () => {
-    deleteSpecies(parseInt(id))
-      .then(handleSuccessfulDelete)
-      .catch(handleDeleteError);
+    deleteSpecies(id).then(handleSuccessfulDelete).catch(handleDeleteError);
   };
 
   return (
