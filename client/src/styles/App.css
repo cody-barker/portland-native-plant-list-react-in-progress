@@ -376,12 +376,12 @@ h3 {
 }
 
 .edit-form__select {
-  margin-bottom: 0.5rem;
   width: 100%;
   border-radius: 0;
   background-color: #004d40;
   color: white;
   padding: 0.5rem;
+  margin: 0;
 }
 
 .edit-form__select option {
